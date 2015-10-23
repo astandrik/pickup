@@ -1,4 +1,4 @@
-var demoApp = angular.module('testApp',['ngRoute','ngMaterial','ngAnimate']);
+var demoApp = angular.module('testApp',['ngRoute','ngMaterial','ngAnimate','mdDataTable']);
 var controllers = {};
 
 $.ajaxSetup({
