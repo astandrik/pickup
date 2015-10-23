@@ -20,7 +20,7 @@
     </md-data-table-header-row>
 
     <md-data-table-row ng-repeat="row in rows">
-        <md-data-table-cell  ng-repeat= "property in row">{{ property.value}}</md-data-table-cell>
+        <md-data-table-cell  data-title="{{property.key}}"  ng-repeat= "property in row">{{ property.value}}</md-data-table-cell>
     </md-data-table-row>
 
 </md-data-table>
