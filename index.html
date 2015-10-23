@@ -158,7 +158,7 @@
             <div ng-controller="DemoCtrl as demo" layout="column" ng-cloak>
             <div class="lock-size" layout="row" layout-align="end end" style='height:100%'>
       <md-fab-speed-dial md-open="demo.isOpen" md-direction="up"
-                         ng-class="'md-fling'">
+                         ng-class="'md-fling'" class='hidden'>
         <md-fab-trigger>
           <md-button aria-label="menu" class="md-fab md-warn">
              <img class="o8 bY" src="//ssl.gstatic.com/bt/C3341AA7A1A076756462EE2E5CD71C11/1x/bt_speed_dial_1x.png" srcset="//ssl.gstatic.com/bt/C3341AA7A1A076756462EE2E5CD71C11/2x/bt_speed_dial_2x.png 2x" alt="" aria-hidden="true" jstcache="0">
@@ -177,6 +177,13 @@
         </md-fab-actions>
       </md-fab-speed-dial>
         </div>
+                        <div layout="column" layout-align="start center" class='hidden'>
+        <b>Open/Closed</b>
+        <md-radio-group ng-model="demo.isOpen">
+          <md-radio-button ng-value="true">Open</md-radio-button>
+          <md-radio-button ng-value="false">Closed</md-radio-button>
+        </md-radio-group>
+      </div>
         </div>
     </div>
 

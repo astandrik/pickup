@@ -13,6 +13,7 @@ controllers.startPageController = function($scope) {
 };
 
 controllers.addNewController = function($scope) {
+       
 }
 
 controllers.DemoCtrl = function() {
@@ -23,6 +24,13 @@ controllers.DemoCtrl = function() {
       this.selectedMode = 'md-fling';
       this.availableDirections = ['up', 'down', 'left', 'right'];
       this.selectedDirection = 'up';
+      var self = this;
+     $('md-fab-speed-dial').mouseenter(function(){
+         $('md-radio-button[ng-value="true"]').click();
+    });
+     $('md-fab-speed-dial').mouseleave(function(){
+          $('md-radio-button[ng-value="false"]').click();
+    });
 }
 
 controllers.projectsController = function($scope,$mdToast) {
@@ -46,6 +54,7 @@ controllers.projectsController = function($scope,$mdToast) {
             }
             $scope.rows.push(obj);
         }
+        $('md-fab-speed-dial').removeClass('hidden');
     })
       
  }
@@ -85,12 +94,5 @@ $(function() {
         setTimeout(function() {
             sidebar.toggleClass('open');
         },200);
-    });
-    $('md-fab-speed-dial').mouseenter(function(){
-         $('.md-fab.md-warn').click();
-    });
-        $('md-fab-speed-dial').mouseleave(function(){
-         $('.md-fab.md-warn').click();
-        setTimeout(function() {$('md-fab-speed-dial').removeClass('md-is-open'); }, 200);
     });
 });
