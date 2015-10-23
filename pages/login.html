@@ -10,17 +10,15 @@
 <script type="text/javascript">
 
     $(function() {
-        $('.sidebar').slideUp( 1000, 'easeInBounce');
-        $('.toolbar').slideUp( 1000,'easeInBounce');
+        $('.toolbar').addClass('hidden');
         $('.login').removeClass('hidden');
         $('.flex-row').css('justify-content','center')
     })
     
     function showMaterials() {
-        $('.sidebar').slideDown( 1000 ,'easeOutBounce');
-        $('.toolbar').slideDown( 1000 ,'easeOutBounce');
+        $('.toolbar').removeClass('hidden');
         $('.login').addClass('hidden');
-        setTimeout('location.href="#/Main"', 1000);
+        setTimeout('location.href="#/Projects"', 1000);
         $('.flex-row').css('justify-content','space-between')
         
     }

@@ -17,6 +17,7 @@
     display: flex;
     justify-content: flex-start;
     flex-direction:column;
+    height:100vh;
 }
 
 .content-centered {
@@ -218,8 +219,9 @@ cursor: pointer;
 .page-content {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width:100%
+    align-items: flex-start;
+    width:100%;
+    padding-left: 62px;
 }
 
 
@@ -265,7 +267,7 @@ cursor: pointer;
 	 td { 
 		/* Behave  like a "row" */
 		border: none;
-		border-bottom: 1px solid #eee; 
+		border-bottom: none!important; 
 		position: relative;
 		padding-left: 20%!important; 
          padding-top: 10px;
@@ -1112,7 +1114,7 @@ cursor: pointer;
     background-color: #11b2b2!important;
 }
 
-table {
+.page-content {
     animation: slideleft 2s; 
 }
 
@@ -1134,4 +1136,9 @@ table {
     border:none!important;
     color:white!important;
     padding-top: 0!important;
+}
+
+.mdDataTable-header > span {
+    font-size: 20px;
+    font-weight: normal;
 }

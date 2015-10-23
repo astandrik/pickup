@@ -15,6 +15,15 @@ controllers.startPageController = function($scope) {
 controllers.addNewController = function($scope) {
 }
 
+controllers.DemoCtrl = function() {
+     this.topDirections = ['left', 'up'];
+      this.bottomDirections = ['down', 'right'];
+      this.isOpen = false;
+      this.availableModes = ['md-fling', 'md-scale'];
+      this.selectedMode = 'md-fling';
+      this.availableDirections = ['up', 'down', 'left', 'right'];
+      this.selectedDirection = 'up';
+}
 
 controllers.projectsController = function($scope,$mdToast) {
     $scope.headers = [];

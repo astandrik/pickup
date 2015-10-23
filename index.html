@@ -150,13 +150,36 @@
     </md-toolbar>
   </md-content>
 </div>
-        <div class='flex-row'>
+        <div class='flex-row' style="align-items:flex-end">
         <!-- Overlay for fixed sidebar -->
 
 <!-- Material sidebar -->
-        <div ng-view class="page-content"></div>
-        
+        <div ng-view></div>
+            <div ng-controller="DemoCtrl as demo" layout="column" ng-cloak>
+            <div class="lock-size" layout="row" layout-align="end end" style='height:100%'>
+      <md-fab-speed-dial md-open="demo.isOpen" md-direction="up"
+                         ng-class="'md-fling'">
+        <md-fab-trigger>
+          <md-button aria-label="menu" class="md-fab md-warn">
+             <img class="o8 bY" src="//ssl.gstatic.com/bt/C3341AA7A1A076756462EE2E5CD71C11/1x/bt_speed_dial_1x.png" srcset="//ssl.gstatic.com/bt/C3341AA7A1A076756462EE2E5CD71C11/2x/bt_speed_dial_2x.png 2x" alt="" aria-hidden="true" jstcache="0">
+          </md-button>
+        </md-fab-trigger>
+        <md-fab-actions>
+          <md-button aria-label="Twitter" class="md-fab md-raised md-mini" onclick="location.href='#/AddProject'">
+               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 15" width="30" height="30"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-5 14H4v-4h11v4zm0-5H4V9h11v4zm5 5h-4V9h4v9z"></path></svg>
+           </md-button>
+          <md-button aria-label="Facebook" class="md-fab md-raised md-mini">
+          
+          </md-button>
+          <md-button aria-label="Google Hangout" class="md-fab md-raised md-mini">
+          
+          </md-button>
+        </md-fab-actions>
+      </md-fab-speed-dial>
         </div>
+        </div>
+    </div>
+
 
 </div>
 
