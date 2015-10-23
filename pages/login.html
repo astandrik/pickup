@@ -1,0 +1,25 @@
+<div class="content-centered text-center">
+    <form class='login hidden' >
+        <h1>Login</h1>
+    	<input type="text" placeholder="Username"/>
+        <input type="password"  placeholder="Password"/>
+        <button type="submit" onclick="showMaterials()" class="btn btn-primary btn-block btn-large">Let me in.</button>
+        </form>    
+    </form>
+</div>
+
+<script type="text/javascript">
+
+    $(function() {
+        $('.sidebar').slideUp( 1000, 'easeInBounce');
+        $('.toolbar').slideUp( 1000,'easeInBounce');
+        $('.login').removeClass('hidden');
+    })
+    
+    function showMaterials() {
+        $('.sidebar').slideDown( 1000 ,'easeOutBounce');
+        $('.toolbar').slideDown( 1000 ,'easeOutBounce');
+        $('.login').addClass('hidden');
+        setTimeout('location.href="#/Main"', 1000);
+    }
+</script>

@@ -1,0 +1,15 @@
+<div ng-controller="projectsController" style="margin-top:10px">
+    <div class='flex-row'>
+        <h1>Список проектов</h1>
+        <button type="submit" class="btn btn-primary btn-md" onclick='location.href="#/AddProject"'>Добавить проект</button>
+    </div>
+    <table class="rwd-table">
+      <tr>
+        <th  ng-repeat="header in headers">{{header}}</th>
+      </tr>
+        <tr ng-repeat="row in rows">
+            <td  ng-repeat= "property in row" data-th='{{ property.key }}'> {{ property.value}} </td>
+        </tr>
+    </table>
+</div>
+
