@@ -3,14 +3,15 @@
 <div ng-controller="projectsController" style="margin-top:10px">
     <div class='flex-row'>
         <h1>Список проектов</h1>
-        <button type="submit" class="btn btn-primary btn-md" onclick='location.href="#/AddProject"'>Добавить проект</button>
     </div>
 
-    
-    <md-data-table
-    sortable-columns="true"
-    selectable-rows="true">
 
+    <md-data-table
+                   table-card="{visible: true, title: 'Список проектов', actionIcons:true}"
+    sortable-columns="true"
+    selectable-rows="true"
+                   alternate-headers="'contextual'"
+                    delete-row-callback="deleteRowCallback(rows)">
     <md-data-table-header-row>
 
         <!-- in case of sortable columns, we can set the defaultly sortable column -->

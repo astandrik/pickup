@@ -15,9 +15,17 @@ controllers.startPageController = function($scope) {
 controllers.addNewController = function($scope) {
 }
 
-controllers.projectsController = function($scope) {
+
+controllers.projectsController = function($scope,$mdToast) {
     $scope.headers = [];
     $scope.rows = [];
+    $scope.deleteRowCallback = function(rows){
+            $mdToast.show(
+                $mdToast.simple()
+                    .content('Deleted row id(s): '+rows)
+                    .hideDelay(3000)
+            );
+        };
     $.getJSON('testData/projects.json', function(json) {
         for(var i = 0; i < Object.keys(json[0]).length; i++) {
            $scope.headers.push(Object.keys(json[0])[i]);
@@ -54,3 +62,19 @@ demoApp.config(function($routeProvider) {
 });
 
 demoApp.controller(controllers);
+
+
+$(function() {
+    $(document).click(function() {
+        var sidebar = $('#sidebar');
+        if(sidebar.hasClass('open')) {
+            sidebar.removeClass('open');
+        }
+    });
+   $('button[aria-label="Settings"]').on('click', function() {
+        var sidebar = $('#sidebar');
+        setTimeout(function() {
+            sidebar.toggleClass('open');
+        },200);
+    });
+});
