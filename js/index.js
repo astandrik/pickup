@@ -16,7 +16,7 @@ controllers.addNewController = function($scope) {
        
 }
 
-controllers.DemoCtrl = function() {
+controllers.DemoCtrl = function($scope,$mdDialog, $timeout  ) {
      this.topDirections = ['left', 'up'];
       this.bottomDirections = ['down', 'right'];
       this.isOpen = false;
