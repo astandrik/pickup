@@ -86,4 +86,11 @@ $(function() {
             sidebar.toggleClass('open');
         },200);
     });
+    $('md-fab-speed-dial').mouseenter(function(){
+         $('.md-fab.md-warn').click();
+    });
+        $('md-fab-speed-dial').mouseleave(function(){
+         $('.md-fab.md-warn').click();
+        setTimeout(function() {$('md-fab-speed-dial').removeClass('md-is-open'); }, 200);
+    });
 });
