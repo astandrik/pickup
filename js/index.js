@@ -18,7 +18,7 @@ controllers.addNewController = function($scope) {
 controllers.projectsController = function($scope) {
     $scope.headers = [];
     $scope.rows = [];
-    $.getJSON('/testData/projects.json', function(json) {
+    $.getJSON('testData/projects.json', function(json) {
         for(var i = 0; i < Object.keys(json[0]).length; i++) {
            $scope.headers.push(Object.keys(json[0])[i]);
         }
