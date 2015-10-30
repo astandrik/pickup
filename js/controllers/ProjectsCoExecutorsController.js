@@ -14,8 +14,8 @@
 { field: "DOGOVOR_NAME", name: "Название договора", width: 9 },
 { field: "DOGOVOR_SUM", name: "Цена (руб.)", width: 6 },
 { field: "DOGOVOR_STATUS", name: "Статус", width: 6 },
-{ field: "DOGOVOR_DATE", name: "Начало", width: 6 },
-{ field: "DOGOVOR_DATE", name: "Окончание", width: 6 }];
+{ field: "DOGOVOR_PERIOD_START", name: "Начало", width: 6 },
+{ field: "DOGOVOR_PERIOD_END", name: "Окончание", width: 6 }];
 
     $scope.isContentShown = false;
     $scope.deleteRowCallback = function (rows) {
@@ -55,6 +55,12 @@
     $scope.displaySelection('ProjectsCoExecutors');
 
     $scope.showGridToolbar();
-
+    $scope.onOrderChange = function (field) {
+        var ord = field.split('')[0] == '-' ? 'desc' : 'asc';
+        if (field.split('')[0] == '-') field = field.slice(1);
+        $scope.order = ord;
+        $scope.sort_order = field;
+        getProjects($projects.proto, $scope, 'coExecutors');
+    }
     getProjects($projects.proto, $scope, 'coExecutors');
 }]);

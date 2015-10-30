@@ -59,5 +59,13 @@
     
     $scope.showGridToolbar();
 
+    $scope.onOrderChange = function (field) {
+        var ord = field.split('')[0] == '-' ? 'desc' : 'asc';
+        if (field.split('')[0] == '-') field = field.slice(1);
+        $scope.order = ord;
+        $scope.sort_order = field;
+        getProjects($projects.proto, $scope, 'orderers');
+    }
+
     getProjects($projects.proto, $scope, 'orderers');
 }]);

@@ -977,6 +977,19 @@ md-data-table-pagination {
 md-checkbox {
   margin: 0!important;
 }
+ng-md-icon {
+  fill: #666666;
+  cursor: default;
+}
+ng-md-icon.hover {
+  fill: #666666;
+  cursor: default;
+}
+md-input-container.iconed.md-input-focused label,
+md-input-container.iconed.md-input-has-value label:not(.md-no-float) {
+  transform: translate3d(-18px, 6px, 0) scale(0.75) !important;
+  -webkit-transform: translate3d(-18px, 6px, 0) scale(0.75) !important;
+}
 h4 {
   font-size: 16px;
   border-bottom: 1px solid #e0f2f1;

@@ -1,5 +1,6 @@
 ﻿function parseNumber(num) {
     if (num.toString().split(' ').length > 1) return num;
+    if (num == '' || num == null || num == 'null') return "0";
     num = num.toString().split('').reverse();
     for (var i = 2; i < num.length; i += 3) {
         num[i] = " " + num[i];
@@ -7,8 +8,15 @@
     return num.reverse().join('');
 }
 
+function getDateFromJSDate(date) {
+    var dd = date.getDate().toString().length == 1 ? '0' + date.getDate() : date.getDate() ;
+    var mm = date.getMonth().toString().length == 1 ? '0' + (date.getMonth()+1) : date.getMonth()+1;
+    var yyyy= date.getYear() + 1900;
+    return dd + '.' + mm + '.' + yyyy;
+}
 
 function parseDate(date) {
+    if (typeof (date) == typeof (new Date())) return  getDateFromJSDate(date) ;
     if (!date) return date;
     date = date.split(' ')[0];
     if (date.toString().split('.').length == 3 || date == '') return date;
@@ -23,6 +31,8 @@ function parseDate(date) {
 function getProjects($projects, $scope, type) {
     $projects[type].success(function (json) {
         $scope.projects = [];
+        var field = $scope.sort_order;
+        var ord = $scope.order;
         switch (type) {
             case 'orderers':
                 json.forEach(function (item) {
@@ -33,11 +43,12 @@ function getProjects($projects, $scope, type) {
                     }
                     item['DOGOVOR_PERIOD_END'] = parseDate(item['DOGOVOR_PERIOD_END']);
                     item['DOGOVOR_PERIOD_START'] = parseDate(item['DOGOVOR_PERIOD_START']);
+                    item['DOGOVOR_DATE'] = parseDate(item['DOGOVOR_DATE']);
                     item['DOGOVOR_NUMBER_AND_DATE'] = '';
-                    item['DOGOVOR_NUMBER_AND_DATE'] = item['DOGOVOR_PERIOD_START'] == '' ?
+                    item['DOGOVOR_NUMBER_AND_DATE'] = item['DOGOVOR_DATE'] == '' ?
                         item['DOGOVOR_NUMBER']
                         :
-                        item['DOGOVOR_NUMBER'] + ' от ' + item['DOGOVOR_PERIOD_START'];
+                        item['DOGOVOR_NUMBER'] + ' от ' + item['DOGOVOR_DATE'];
                     item['DOGOVOR_SUM'] = parseNumber(item['DOGOVOR_SUM']);
 
 
@@ -52,6 +63,28 @@ function getProjects($projects, $scope, type) {
                     obj.show = "";
                     $scope.projects.push(obj);
                 });
+                if (field) {
+                    var field = field.split('.')[0];
+                    $scope.projects.sort(function (a, b) {
+                        var val1;
+                        a.forEach(function (item) {
+                            if (item.name == field) {
+                                val1 = item.value;
+                            }
+                        });
+                        var val2;
+                        b.forEach(function (item) {
+                            if (item.name == field) {
+                                val2 = item.value;
+                            }
+                        });
+                        if (field == "DOGOVOR_SUM") {
+                            val1 = parseFloat(val1.split(' ').join(''));
+                            val2 = parseFloat(val2.split(' ').join(''));
+                        }
+                        return ord == 'asc' ? val1 > val2 ? 1 : -1 : val1 < val2 ? 1 : -1;
+                    });
+                }
                 break;
             case 'coExecutors':
                 json.forEach(function (item) {
@@ -62,10 +95,11 @@ function getProjects($projects, $scope, type) {
                     }
                     item['DOGOVOR_PERIOD_START'] = parseDate(item['DOGOVOR_PERIOD_START']);
                     item['DOGOVOR_PERIOD_END'] = parseDate(item['DOGOVOR_PERIOD_END']);
-                    item['DOGOVOR_NUMBER_AND_DATE'] = item['DOGOVOR_PERIOD_START'] == '' ?
+                    item['DOGOVOR_DATE'] = parseDate(item['DOGOVOR_DATE']);
+                    item['DOGOVOR_NUMBER_AND_DATE'] = item['DOGOVOR_DATE'] == '' ?
                         item['DOGOVOR_NUMBER']
                         :
-                        item['DOGOVOR_NUMBER'] + ' от ' + item['DOGOVOR_PERIOD_START'];
+                        item['DOGOVOR_NUMBER'] + ' от ' + item['DOGOVOR_DATE'];
 
                     item['DOGOVOR_SUM'] = parseNumber(item['DOGOVOR_SUM']);
 
@@ -81,6 +115,28 @@ function getProjects($projects, $scope, type) {
                     obj.show = "";
                     $scope.projects.push(obj);
                 });
+                if (field) {
+                    var field = field.split('.')[0];
+                    $scope.projects.sort(function (a, b) {
+                        var val1;
+                        a.forEach(function (item) {
+                            if (item.name == field) {
+                                val1 = item.value;
+                            }
+                        });
+                        var val2;
+                        b.forEach(function (item) {
+                            if (item.name == field) {
+                                val2 = item.value;
+                            }
+                        });
+                        if (field == "DOGOVOR_SUM") {
+                            val1 = parseFloat(val1.split(' ').join(''));
+                            val2 = parseFloat(val2.split(' ').join(''));
+                        }
+                        return ord == 'asc' ? val1 > val2 ? 1 : -1 : val1 < val2 ? 1 : -1;
+                    });
+                }
                 break;
         } 
     }).error(function () { debugger; }).then(function () { $scope.isContentShown = true; });

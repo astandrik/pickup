@@ -15,7 +15,7 @@
             this.contract_name = "Управление и эксплуатация российского сегмента Международной космической станции";
             this.contract_code = "МКС (Эксплуатация)";
             this.contract_number = "351-8641/13/205";
-            this.contract_date = "";
+            this.contract_date = new Date();
             this.contract_main_designer = "Соловьев В.А.";
             this.contract_project_office = "ГПО";
             this.contract_ntc = "ГПО";
@@ -32,8 +32,8 @@
             this.contract_sum_model = "";
             this.contract_sum = 0;
             this.contract_currency = "";
-            this.contract_start_date = "01.01.2013";
-            this.contract_end_date = "01.01.2013";
+            this.contract_start_date = new Date("01.01.2013");
+            this.contract_end_date = new Date("01.01.2013");
             this.contract_name = "";
             this.contract_code = "";
             this.contract_number = "";
@@ -61,6 +61,9 @@
             this.contract_name = data.DOGOVOR_CODE || this.contract_name;
             this.contract_code = data.DOGOVOR_CODE || this.contract_name;
             this.contract_date = parseDate(data.DOGOVOR_DATE) || parseDate(data.DOGOVOR_PERIOD_START) || this.contract_start_date;
+            this.contract_start_date = new Date(this.contract_start_date);
+            this.contract_end_date = new Date(this.contract_end_date);
+            this.contract_date = new Date(this.contract_date);
         }
         return this;
     }

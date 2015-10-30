@@ -23,7 +23,7 @@
         <table md-data-table md-row-select="selected" md-progress="deferred">
             <thead md-order="query.order" md-trigger="onOrderChange">
                 <tr class="flex layout-row">
-                    <th ng-repeat="header in headers" style="flex: {{header.width}}"  class="{{header.field}}" name="{{header.name}}"></th>
+                    <th ng-repeat="header in headers" order-by="{{header.field+'.value'}}"  style="flex: {{header.width}}" class="{{header.field}}" name="{{header.name}}"></th>
                     <th style="flex: 1"></th>
                     <th style="flex: 1"></th>
                 </tr>
