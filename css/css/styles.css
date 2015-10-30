@@ -810,8 +810,8 @@ body {
 }
 .page-content {
   width: 100%;
-  padding-left: 62px;
-  padding-right: 62px;
+  padding-left: 24px;
+  padding-right: 24px;
   margin-top: 20px;
 }
 .flex {
@@ -865,7 +865,10 @@ body {
   font-size: 14px;
 }
 .nav-tabs li.active {
-  border-bottom: 2px solid #196666!important;
+  border-bottom: 3px solid #e4ec62!important;
+}
+.nav-tabs li.active a {
+  color: white!important;
 }
 .no-display {
   display: none!important;
@@ -873,7 +876,7 @@ body {
 .nav-tabs li a {
   background-color: #11b2b2!important;
   border: none!important;
-  color: white!important;
+  color: #c4ecec!important;
   padding-top: 0!important;
 }
 .mdDataTable-header > span {

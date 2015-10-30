@@ -1,0 +1,52 @@
+<div class='toolbar'  ng-cloak>
+    <md-content style="overflow:hidden">
+        <md-toolbar>
+            
+            <div class="md-toolbar-tools">
+                <ng-md-icon icon="arrow_back" ng-click="onProjectTypeChange()" style="margin-right:15px; margin-top:5px; fill:white" size="30px"></ng-md-icon>
+                
+                    {{toolBarHeader}}
+               
+                <span flex></span>
+                <div>
+                    <ng-md-icon icon="sort" size="30px"></ng-md-icon>
+                    <ng-md-icon icon="file_download" size="30px"></ng-md-icon>
+                    <ng-md-icon icon="edit" size="30px"></ng-md-icon>
+                </div>
+
+            </div>
+            <ul class="nav nav-tabs" role="tablist">
+               <li class="active">
+                   <a href="#/Projects" role="tab" data-toggle="tab">
+                       <span>ОБЩИЕ СВЕДЕНИЯ</span>
+                   </a>
+               </li>
+               <li>
+                   <a >
+                       <span>ФИНАНСИРОВАНИЕ</span>
+                   </a>
+               </li>
+               <li>
+                   <a>
+                       <span>ДОКУМЕНТАЦИЯ</span>
+                   </a>
+               </li>
+                <li>
+                    <a>
+                        <span>КАЛЕНДАРНЫЙ ПЛАН</span>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <span>ПРОБЛЕМЫ</span>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <span>СОБЫТИЯ</span>
+                    </a>
+                </li>
+           </ul>
+        </md-toolbar>
+    </md-content>
+</div>

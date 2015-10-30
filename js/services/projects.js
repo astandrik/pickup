@@ -10,12 +10,12 @@
             this.contract_sum_model = "Твердая";
             this.contract_sum = 12189157400;
             this.contract_currency = "рубль";
-            this.contract_start_date = new Date("01.01.2013");
-            this.contract_end_date = new Date("11.25.2015");
+            this.contract_start_date = "";
+            this.contract_end_date = "";
             this.contract_name = "Управление и эксплуатация российского сегмента Международной космической станции";
             this.contract_code = "МКС (Эксплуатация)";
             this.contract_number = "351-8641/13/205";
-            this.contract_date = new Date("06.24.2013");
+            this.contract_date = "";
             this.contract_main_designer = "Соловьев В.А.";
             this.contract_project_office = "ГПО";
             this.contract_ntc = "ГПО";
@@ -23,7 +23,32 @@
             this.contract_deputy = "Черленяк Н.Н.";
             this.contract_curator = "Григорьев А.И.";
         };
+        function setEmpty() {
+            this.contract_type = "Государственный контракт";
+            this.contract_status = "";
+            this.contract_order = "";
+            this.contract_executor = "";
+            this.contract_sum_rub = 0;
+            this.contract_sum_model = "";
+            this.contract_sum = 0;
+            this.contract_currency = "";
+            this.contract_start_date = "01.01.2013";
+            this.contract_end_date = "01.01.2013";
+            this.contract_name = "";
+            this.contract_code = "";
+            this.contract_number = "";
+            this.contract_date = new Date("");
+            this.contract_main_designer = "";
+            this.contract_project_office = "";
+            this.contract_ntc = "";
+            this.contract_department = "";
+            this.contract_deputy = "";
+            this.contract_curator = "";
+        }
         setDefaults.call(this);
+        if (data == 'new') {
+            setEmpty.call(this);
+        }
         if (data) {
             this.id = data.DOGOVOR_ID;
             this.contract_status = data.DOGOVOR_STATUS || this.contract_status;
@@ -74,7 +99,7 @@
     };
 
     return {
-        createNew: function () { return new Project() },
+        createNew: function () { return new Project('new') },
         proto : Project.prototype
     };
 }]);

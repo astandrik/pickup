@@ -53,5 +53,8 @@
         $scope.selected = [];
     };
     $scope.displaySelection('ProjectsCoExecutors');
+
+    $scope.showGridToolbar();
+
     getProjects($projects.proto, $scope, 'coExecutors');
 }]);

@@ -74,14 +74,14 @@
     <Content Include="img\icons\more_vert.svg" />
     <Content Include="img\icons\project.svg" />
     <Content Include="index.html" />
-    <Content Include="js\controllers\NewProjectController.js" />
     <Content Include="js\controllers\ProjectsCoExecutorsController.js" />
     <Content Include="js\controllers\ProjectsOrderersController.js" />
     <Content Include="js\controllers\ContractCardController.js" />
-    <Content Include="js\controllers\ProjectsController.js" />
     <Content Include="js\controllers\LayoutController.js" />
     <Content Include="js\directives\mask.html" />
     <Content Include="js\directives\mask.js" />
+    <Content Include="js\directives\toolBarProject.html" />
+    <Content Include="js\directives\toolBarProject.js" />
     <Content Include="js\directives\toolBar.html" />
     <Content Include="js\directives\toolBar.js" />
     <Content Include="js\directives\sideBar.html" />
@@ -106,7 +106,6 @@
     <Content Include="js\services\projects.js" />
     <Content Include="pages\contract_card.html" />
     <Content Include="pages\login.html" />
-    <Content Include="pages\newproject.html" />
     <Content Include="pages\projects_coexecuters.html" />
     <Content Include="pages\projects_orderers.html" />
     <Content Include="pages\startpage.html" />

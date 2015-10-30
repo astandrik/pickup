@@ -18,10 +18,6 @@ var app = angular.module('testApp', ['ngResource','ngRoute', 'ngMaterial', 'ngAn
                   {
                       templateUrl: 'pages/projects_coexecuters.html'
                   })
-            .when('/AddProject',
-                  {
-                      templateUrl: 'pages/newproject.html'
-                  })
              .when('/ContractCard',
                   {
                       templateUrl: 'pages/contract_card.html'

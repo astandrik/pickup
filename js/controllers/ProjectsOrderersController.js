@@ -56,5 +56,8 @@
         $scope.selected = [];
     }
     $scope.displaySelection('ProjectsOrderers');
+    
+    $scope.showGridToolbar();
+
     getProjects($projects.proto, $scope, 'orderers');
 }]);

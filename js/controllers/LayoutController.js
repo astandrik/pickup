@@ -31,6 +31,19 @@
         }
     }
 
+    $scope.showGridToolbar = function () {
+        $scope.isGridShown = true;
+        $scope.isProjectShown = false;
+    }
+
+    $scope.showProjectToolbar = function () {
+        $scope.isGridShown = false;
+        $scope.isProjectShown = true;
+    }
+    $scope.setToolBarHeader = function (title) {
+        $scope.toolBarHeader = title;
+        $scope.projectName = title;
+    }
     $scope.openProject = function (id, type) {
         location.href = "#/ContractCard?id=" + id + "&type=" + type;
     };
