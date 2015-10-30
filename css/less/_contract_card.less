@@ -3,20 +3,29 @@
 
    background-color: #eeeeee;
     }
+    
 
-    #global_row{
-        flex-wrap:wrap;
-    }
+.min-width-450 {
+    min-width:450px;
+}
+
+.min-width-900 {
+    min-width:900px;
+}
 
     .group-element
       {
-          min-width:442px;
           background-color: white;
+          height:330px;
           padding: 10px 16px 10px 16px;
           margin: 24px 24px 24px 0;
-
+          flex:3;
           &.wide{
-              min-width:850px !important;
+              flex:6;
+          }
+
+          &.no-right {
+              margin-right:0px;
           }
 
           .external_lable{

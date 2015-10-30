@@ -814,6 +814,12 @@ body {
   padding-right: 24px;
   margin-top: 20px;
 }
+.flex-3 {
+  flex: 3;
+}
+.flex-6 {
+  flex: 6;
+}
 .flex {
   display: flex;
 }
@@ -831,6 +837,9 @@ body {
 }
 .flex.justify-center {
   justify-content: center;
+}
+.flex.flex-wrap {
+  flex-wrap: wrap;
 }
 .grow-1 {
   flex-grow: 1;
@@ -962,17 +971,24 @@ md-data-table-pagination {
 #contract_card_page_content {
   background-color: #eeeeee;
 }
-#global_row {
-  flex-wrap: wrap;
+.min-width-450 {
+  min-width: 450px;
+}
+.min-width-900 {
+  min-width: 900px;
 }
 .group-element {
-  min-width: 442px;
   background-color: white;
+  height: 330px;
   padding: 10px 16px 10px 16px;
   margin: 24px 24px 24px 0;
+  flex: 3;
 }
 .group-element.wide {
-  min-width: 850px !important;
+  flex: 6;
+}
+.group-element.no-right {
+  margin-right: 0px;
 }
 .group-element .external_lable {
   font-size: 12px;
