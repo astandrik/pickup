@@ -1,0 +1,14 @@
+{
+  "name": "pickup",
+  "version": "1.0.0",
+  "description": "Grunt for merging and minification",
+  "main": "gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gruntjs"
+  ],
+  "author": "Me",
+  "license": "ISC"
+}

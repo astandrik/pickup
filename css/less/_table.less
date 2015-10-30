@@ -1,0 +1,56 @@
+﻿@media only screen and (max-width: 800px) {
+
+}
+
+.tablebutton:active {
+    background-color: white!important;
+    color: white!important;
+    border: none!important;
+}
+
+#orderersTable,
+#coExecutorsTable {
+    td {
+        font-size:12px;
+    }
+
+    h2 {
+        font-size:16px;
+    }
+}
+
+table[md-data-table]>tbody>tr {
+    height:unset!important;
+    min-height:50px;
+    &:hover {
+        cursor:default;
+    }
+}
+
+md-data-table-toolbar {
+        padding: 0 16px!important;
+         border-bottom: 1px solid; 
+    border-bottom-color: rgba(0, 0, 0, 0.117647);
+}
+td[name="DOGOVOR_SUM"] {
+    justify-content:flex-end;
+}
+
+th.DOGOVOR_SUM div {
+    justify-content:flex-end;
+}
+
+table[md-data-table][md-row-select]>tbody>tr>td:first-child,
+th[md-select-all="projects"] {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+md-data-table-container, 
+md-data-table-toolbar,
+md-data-table-pagination {
+-webkit-box-shadow: -1px 8px 16px 0px rgba(0, 0, 0, 0.34);
+-moz-box-shadow:    -1px 8px 16px 0px rgba(0, 0, 0, 0.34);
+box-shadow:         -1px 8px 16px 0px rgba(0, 0, 0, 0.34);
+}

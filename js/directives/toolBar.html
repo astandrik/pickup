@@ -1,0 +1,24 @@
+<div class='toolbar'  ng-cloak>
+    <md-content style="overflow:hidden">
+        <md-toolbar>
+            
+            <div class="md-toolbar-tools">
+                <md-button class="md-icon-button" aria-label="Settings" ng-click="openSideBar()">
+                    <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+                </md-button>
+                <md-select name="dogovorType" ng-model="dogovorType" ng-change="onProjectTypeChange()">
+                    <md-option value="ProjectsOrderers">Договоры с заказчиками</md-option>
+                    <md-option value="ProjectsCoExecutors">Договоры со смежниками</md-option>
+                </md-select>
+                <span flex></span>
+                <md-button class="md-icon-button" aria-label="More" style='margin-top:19px;fill:white'>
+                    <ng-md-icon icon="search" size="28">
+                </md-button>
+                <md-button class="md-icon-button" aria-label="More">
+                    <md-icon md-svg-icon="img/icons/more_vert.svg"></md-icon>
+                </md-button>
+
+            </div>
+        </md-toolbar>
+    </md-content>
+</div>

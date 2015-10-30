@@ -1,0 +1,66 @@
+﻿<!doctype html>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<html ng-app="testApp">
+<head>
+
+    <link href="css/libs/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/libs/angular-material.min.css">
+    <link rel='stylesheet' href="css/libs/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/libs/md-data-table.min.css" />
+
+    <!-- Custom stylesheets -->
+    <link rel="stylesheet" href="css/css/styles.min.css">
+    <!--External libs-->
+
+    <script src="js/libs/jquery-1.11.3.min.js"></script>
+    <script src="js/libs/angular.js"></script>
+    <script src="js/libs/angular-animate.min.js"></script>
+    <script src="js/libs/angular-aria.min.js"></script>
+    <script src="js/libs/angular-material.min.js"></script>
+    <script src="js/libs/angular-resource.min.js"></script>
+    <script src="js/libs/angular-route.min.js"></script>
+    <script src="js/libs/angular-uuid4.min.js"></script>
+    <script src="js/libs/bootstrap.min.js"></script>
+    <script src="js/libs/jquery-ui.min.js"></script>
+    <script src="js/libs/md-data-table.min.js"></script>
+    <script src="js/libs/underscore-min.js"></script>
+    <script src="js/libs/angular-material-icons.min.js"></script>
+</head>
+<body>
+    <div ng-controller="LayoutController">
+        <!--Mask-->
+        <mask ng-show="isMaskShown" ng-click="closeSideBar()"></mask> 
+        <!-- Sidebar -->
+        <side-bar></side-bar>
+
+        <div class="content-start" >
+            <tool-bar></tool-bar>
+            <div class='flex layout-row justify-between align-center'>
+                <div ng-view class="grow-1"></div>
+            </div>
+
+
+        </div>
+    </div>
+
+</body>
+
+<!--Helpers-->
+<script src="js/helpers/utils.js"></script>
+<!--Modules-->
+<script src="js/index.js"></script>
+
+<!--Controllers-->
+<script src="js/controllers/ProjectsOrderersController.js"></script>
+<script src="js/controllers/NewProjectController.js"></script>
+<script src="js/controllers/ProjectsCoExecutorsController.js"></script>
+<script src="js/controllers/LayoutController.js"></script>
+<script src="js/controllers/ContractCardController.js"></script>
+<!--Directives-->
+<script src="js/directives/sideBar.js"></script>
+<script src="js/directives/toolBar.js"></script>
+<script src="js/directives/mask.js"></script>
+<!--Services-->
+<script src="js/services/projects.js"></script>
+
+</html>

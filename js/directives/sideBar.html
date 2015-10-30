@@ -1,0 +1,102 @@
+<aside id="sidebar" class="sidebar sidebar-default" ng-class="{'open' : isSideBarOpen}" role="navigation">
+    <!-- Sidebar header -->
+    <div class="sidebar-header header-cover flex layout-column" style="padding-left:20px; padding-right: 20px; align-items:flex-start; justify-content:space-between; background-color: #11b2b2">
+        <!-- Top bar -->
+        <!-- Sidebar toggle button -->
+        <div style="flex: 60">
+            <h3>АРМ ГУП</h1>
+        </div>
+        <!-- Sidebar brand name -->
+        <div class="flex layout-row align-center justify-between" style="flex:40">
+            <h5 style="width:50%">
+                Константинопольский Константин Константинович
+            </h5>
+            <b class="caret"></b>
+        </div>
+    </div>
+
+    <ul class="nav sidebar-nav">
+        <li class="dropdown">
+            <a class="ripple-effect dropdown-toggle"  data-toggle="dropdown">
+                Договоры
+                <b class="caret"></b>
+            </a>
+            <ul id="settings-dropdown" class="dropdown-menu">
+                <li>
+                    <a href="#/ProjectsOrderers">
+                        С заказчиками
+                    </a>
+                </li>
+                <li>
+                    <a href="#/ProjectsCoExecutors">
+                        Со смежниками
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="divider"></li>
+        <li class="dropdown">
+            <a class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                Этапы договоров
+                <b class="caret"></b>
+            </a>
+            <ul id="settings-dropdown" class="dropdown-menu">
+                <li>
+                    <a href="#/Projects">
+                        С заказчиками
+                    </a>
+                </li>
+                <li>
+                    <a href="#/Projects">
+                        С соисполнителями
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="divider"></li>
+        <li class="dropdown">
+            <a class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                Документация
+                <b class="caret"></b>
+            </a>
+            <ul id="settings-dropdown" class="dropdown-menu">
+                <li>
+                    <a href="#/Projects">
+                        Конкурсная/отборочная
+                    </a>
+                </li>
+                <li>
+                    <a href="#/Projects">
+                        По договорной и контрактной деятельности
+                    </a>
+                </li>
+                <li>
+                    <a href="#/Projects">
+                        Организационно-распорядительная
+                    </a>
+                </li>
+                <li>
+                    <a href="#/Projects">
+                        Финансово-экономическая
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</aside>
+
+<script type="text/javascript">
+    (function ($) {
+        var dropdown = $('.dropdown');
+
+        // Add slidedown animation to dropdown
+        dropdown.on('show.bs.dropdown', function (e) {
+            $(this).find('.dropdown-menu').first().stop(true, true).slideDown();
+        });
+
+        // Add slideup animation to dropdown
+        dropdown.on('hide.bs.dropdown', function (e) {
+            $(this).find('.dropdown-menu').first().stop(true, true).slideUp();
+        });
+    })(jQuery);
+</script>

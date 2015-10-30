@@ -1,0 +1,44 @@
+
+
+<div id="orderersTable" ng-controller="ProjectsOrderersController" class='page-content' ng-class="{'show' : isContentShown, 'hidden' : !isContentShown}">
+
+
+    <md-data-table-toolbar ng-hide="selected.length || filter.show" class="flex layout-row justify-between">
+        <h2 class="md-title title-clickable" onclick="location.href = '#/AddProject'">Добавить договор</h2>
+        <div>
+            <ng-md-icon icon="sort" size="30px"></ng-md-icon>
+            <ng-md-icon icon="file_download" size="30px"></ng-md-icon>
+            <ng-md-icon icon="search" size="30px"></ng-md-icon>
+        </div>
+    </md-data-table-toolbar>
+
+    <md-data-table-toolbar class="alternate" ng-show="selected.length" layout-align="space-between">
+        <div><h2 class="md-title"> {{selected.length > 1 ? 'Выбрано' : 'Выбран'}}  {{selected.length}} {{selected.length > 1 ? 'договора' : 'договор'}} </h2></div>
+        <md-button class="md-icon-button"  ng-click="deleteSelected($event)">
+            <ng-md-icon icon="delete"  size="30px"></ng-md-icon>
+        </md-button>
+    </md-data-table-toolbar>
+
+    <md-data-table-container>
+        <table md-data-table md-row-select="selected" md-progress="deferred">
+            <thead md-order="query.order" md-trigger="onOrderChange">
+                <tr class="flex layout-row">
+                    <th ng-repeat="header in headers" style="flex: {{header.width}}"  class="{{header.field}}" name="{{header.name}}"></th>
+                    <th style="flex: 1"></th>
+                    <th style="flex: 1"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="flex layout-row"  ng-repeat="row in projects | limitTo: query.limit: (query.page - 1) * query.limit">
+                    <td ng-repeat="property in row" class="flex layout-row align-center" style="flex: {{property.grow}};" name="{{property.name}}"><span>{{ property.value}}</span></td>
+                    <td class="flex layout-row align-center"><ng-md-icon icon="edit" ng-click='openProject(row.id, "orderers")' size="30px" ></ng-md-icon></td>
+                    <td class="flex layout-row align-center"><ng-md-icon icon="open_in_new" size="30px"></ng-md-icon></td>
+                </tr>
+            </tbody>
+        </table>
+    </md-data-table-container>
+
+    <md-data-table-pagination style="background-color:rgb(255,255,255)" md-limit="query.limit" md-page="query.page" md-total="{{projects.length}}"></md-data-table-pagination>
+
+</div>
+
