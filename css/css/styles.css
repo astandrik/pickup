@@ -972,15 +972,36 @@ md-data-table-pagination {
   background-color: #eeeeee;
 }
 .min-width-450 {
-  min-width: 450px;
+  min-width: 442px;
+}
+md-checkbox {
+  margin: 0!important;
+}
+h4 {
+  font-size: 16px;
+  border-bottom: 1px solid #e0f2f1;
+  height: 40px;
+  line-height: 30px;
+}
+label {
+  font-size: 12px;
+}
+input {
+  font-size: 14px;
 }
 .min-width-900 {
-  min-width: 900px;
+  min-width: 919px;
+}
+span.header {
+  margin-left: 16px;
+  margin-top: 16px;
+}
+.padded-area {
+  padding: 10px 16px 10px 16px;
 }
 .group-element {
   background-color: white;
   height: 330px;
-  padding: 10px 16px 10px 16px;
   margin: 24px 24px 24px 0;
   flex: 3;
 }
@@ -997,6 +1018,6 @@ md-data-table-pagination {
 }
 .group-element md-input-container {
   font-size: 16px;
-  margin-right: 10px;
+  margin-right: 24px;
 }
 /*# sourceMappingURL=styles.css.map */
