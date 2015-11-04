@@ -22,6 +22,30 @@
             this.contract_department = "ГПО";
             this.contract_deputy = "Черленяк Н.Н.";
             this.contract_curator = "Григорьев А.И.";
+            var rows = [];
+            var headers = [];
+            var financeHeaders = ['ФОТ', 'ОСН', 'Материалы', 'Командировки', 'Прочие', 'Накладные',
+                'Себестоимость собственных работ', 'Смежники', 'Полная себестоимость', 'Прибыль', 'Цена'];
+            var startDate = 2010;
+            var endDate = 2015;
+
+            for (var i = startDate; i <= endDate; i++) {
+                headers.push({ name: i });
+            }
+            financeHeaders.forEach(function (header) {
+                var row = [{ value: header, name: 'Наименование статей затрат' }, { value: '0', name: 'Всего (руб.)' }];
+                for (var i = startDate; i <= endDate; i++) {
+                    row.push({ value: '0', name: i });
+                }
+                rows.push(row);
+            });
+
+            this.dogovorFinanceStructure = {
+                headers: headers,
+                rows: rows,
+                start: startDate,
+                end: endDate
+            }
         };
         function setEmpty() {
             this.contract_type = "Государственный контракт";

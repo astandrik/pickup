@@ -67,6 +67,7 @@
     <Content Include="css\libs\bootstrap-theme.min.css" />
     <Content Include="css\libs\bootstrap.min.css" />
     <Content Include="css\libs\md-data-table-style.css" />
+    <Content Include="css\Material-Design-Iconic-Font.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="gruntfile.js" />
     <Content Include="img\icons\favorite.svg" />
@@ -81,6 +82,8 @@
     <Content Include="js\controllers\LayoutController.js" />
     <Content Include="js\directives\mask.html" />
     <Content Include="js\directives\mask.js" />
+    <Content Include="js\directives\financeDogovorStructureTable.html" />
+    <Content Include="js\directives\financeDogovorStructureTable.js" />
     <Content Include="js\directives\projectsTable.html" />
     <Content Include="js\directives\projectsTable.js" />
     <Content Include="js\directives\toolBarProject.html" />
@@ -133,6 +136,11 @@
     <Content Include="css\less\_customization.less" />
     <Content Include="css\less\_contract_card.less" />
     <Content Include="testData\projectsCoExecuters.json" />
+    <Content Include="css\less\_external.less" />
+    <Content Include="css\Material-Design-Iconic-Font.eot" />
+    <Content Include="css\Material-Design-Iconic-Font %281%29.eot" />
+    <Content Include="css\Material-Design-Iconic-Font2.woff" />
+    <Content Include="css\Material-Design-Iconic-Font.ttf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

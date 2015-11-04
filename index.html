@@ -37,7 +37,7 @@
             <tool-bar ng-hide="!isGridShown"></tool-bar>
             <tool-bar-project ng-hide="!isProjectShown"></tool-bar-project>
             <div class='flex layout-row justify-between align-center'>
-                <div ng-view class="grow-1"></div>
+                <div ng-view class="grow-1" style="z-index:100;"></div>
             </div>
 
 
@@ -63,6 +63,7 @@
 <script src="js/directives/mask.js"></script>
 <script src="js/directives/toolBarProject.js"></script>
 <script src="js/directives/projectsTable.js"></script>
+<script src="js/directives/financeDogovorStructureTable.js"></script>
 <!--Services-->
 <script src="js/services/projects.js"></script>
 

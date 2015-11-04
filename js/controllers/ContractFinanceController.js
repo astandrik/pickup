@@ -6,12 +6,13 @@ app.controller('ContractFinanceController', ['$scope', '$http', '$route', '$proj
         projectType = $params.type,
         isNew = $params.new;
     $scope.setCurrentProject(id, projectType);
-    $scope.activateFinance();
+    $scope.activateFinanceTab();
     var dogovor = $projects.createNew();
     function setDogovor(proj) {
         Object.keys(proj).forEach(function (key) {
             $scope[key] = proj[key];
         });
+        $scope.data = proj.dogovorFinanceStructure;
         var headDogovor = $scope.contract_date == "" ||
             $scope.contract_date == null  ||
             $scope.contract_date.toString() == "Invalid Date"
@@ -29,6 +30,5 @@ app.controller('ContractFinanceController', ['$scope', '$http', '$route', '$proj
         $scope[key] = dogovor[key];
     });
     var proj = $projects.proto.getById(id, projectType, setDogovor);
-
 
 }]);

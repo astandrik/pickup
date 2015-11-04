@@ -31,7 +31,7 @@ app.controller('LayoutController', ['$scope', function ($scope) {
                 break;
         }
         switch ($scope.currentProject.type) {
-            case 'orderers':    
+            case 'orderers':        
                 location.href = '#/ProjectsOrderers';
                 break;
             case 'coExecutors':
@@ -64,12 +64,12 @@ app.controller('LayoutController', ['$scope', function ($scope) {
         $scope.currentProject.type = type;
     }
 
-    $scope.activateCard = function () {
+    $scope.activateCardTab = function () {
         $scope.isCardActive = true;
         $scope.isFinanceActive = false;
     }
 
-    $scope.activateFinance = function () {
+    $scope.activateFinanceTab = function () {
         $scope.isCardActive = false;
         $scope.isFinanceActive = true;
     }

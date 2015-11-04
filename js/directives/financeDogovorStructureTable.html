@@ -1,0 +1,33 @@
+    <md-data-table-toolbar ng-hide="selected.length || filter.show" class="flex layout-row justify-between">
+        <h2 class="md-title">Dropdown</h2>
+        <div>
+            <ng-md-icon icon="edit" size="30px"></ng-md-icon>
+            <ng-md-icon icon="file_download" size="30px"></ng-md-icon>
+        </div>
+    </md-data-table-toolbar>
+
+    <md-data-table-toolbar class="alternate" ng-show="selected.length" layout-align="flex-end">
+        <md-button class="md-icon-button" ng-click="listing.deleteSelected($event)">
+            <ng-md-icon icon="save" size="30px"></ng-md-icon>
+        </md-button>
+    </md-data-table-toolbar>
+
+    <md-data-table-container>
+        <table md-data-table  md-progress="deferred">
+            <thead>
+                <tr class="flex layout-row">
+                    <th style="flex: 1" name="Наименование статей затрат"></th>
+                    <th style="flex: 1" name="Всего (руб.)"></th>
+                    <th ng-repeat="header in listing.headers" 
+                        style="flex: 1" 
+                        name="{{header.name}}"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="flex layout-row"  ng-repeat="row in listing.rows">
+                    <td ng-repeat="property in row | limitTo : 1 : 0" class="flex layout-row align-center" style="flex: 1" name="{{property.name}}"><span>{{ property.value}}</span></td>
+                    <td ng-repeat="property in row | limitTo : 999 : 1 " class="flex layout-row align-center" style="flex: 1" name="{{property.name}}"><input value="{{ property.value}}"></input></td>
+                </tr>
+            </tbody>
+        </table>
+    </md-data-table-container>

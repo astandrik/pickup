@@ -6,7 +6,7 @@ app.controller('ContractCardController', ['$scope', '$http', '$route', '$project
         projectType = $params.type,
         isNew = $params.new;
     $scope.setCurrentProject(id, projectType);
-    $scope.activateCard();
+    $scope.activateCardTab();
     var dogovor = $projects.createNew();
     function setDogovor(proj) {
         Object.keys(proj).forEach(function (key) {
