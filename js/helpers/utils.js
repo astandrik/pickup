@@ -1,4 +1,4 @@
-﻿function parseNumber(num) {
+function parseNumber(num) {
     if (num.toString().split(' ').length > 1) return num;
     if (num == '' || num == null || num == 'null') return "0";
     num = num.toString().split('').reverse();
@@ -33,25 +33,21 @@ function getProjects($projects, $scope, type) {
         $scope.projects = [];
         var field = $scope.sort_order;
         var ord = $scope.order;
-        switch (type) {
-            case 'orderers':
-                json.forEach(function (item) {
+        json.forEach(function (item) {
                     for (var e in item) {
                         if (item[e] == null || item[e] == 'null') {
                             item[e] = '';
                         }
                     }
+
                     item['DOGOVOR_PERIOD_END'] = parseDate(item['DOGOVOR_PERIOD_END']);
                     item['DOGOVOR_PERIOD_START'] = parseDate(item['DOGOVOR_PERIOD_START']);
                     item['DOGOVOR_DATE'] = parseDate(item['DOGOVOR_DATE']);
-                    item['DOGOVOR_NUMBER_AND_DATE'] = '';
                     item['DOGOVOR_NUMBER_AND_DATE'] = item['DOGOVOR_DATE'] == '' ?
                         item['DOGOVOR_NUMBER']
                         :
                         item['DOGOVOR_NUMBER'] + ' от ' + item['DOGOVOR_DATE'];
                     item['DOGOVOR_SUM'] = parseNumber(item['DOGOVOR_SUM']);
-
-
                     var obj = [];
                     obj.id = item['DOGOVOR_ID'] || 0;
                     $scope.headers.forEach(function (elem) {
@@ -63,81 +59,27 @@ function getProjects($projects, $scope, type) {
                     obj.show = "";
                     $scope.projects.push(obj);
                 });
-                if (field) {
-                    var field = field.split('.')[0];
-                    $scope.projects.sort(function (a, b) {
-                        var val1;
-                        a.forEach(function (item) {
-                            if (item.name == field) {
-                                val1 = item.value;
-                            }
-                        });
-                        var val2;
-                        b.forEach(function (item) {
-                            if (item.name == field) {
-                                val2 = item.value;
-                            }
-                        });
-                        if (field == "DOGOVOR_SUM") {
-                            val1 = parseFloat(val1.split(' ').join(''));
-                            val2 = parseFloat(val2.split(' ').join(''));
-                        }
-                        return ord == 'asc' ? val1 > val2 ? 1 : -1 : val1 < val2 ? 1 : -1;
-                    });
-                }
-                break;
-            case 'coExecutors':
-                json.forEach(function (item) {
-                    for (var e in item) {
-                        if (item[e] == null || item[e] == 'null') {
-                            item[e] = '';
-                        }
+        if (field) {
+            var field = field.split('.')[0];
+            $scope.projects.sort(function (a, b) {
+                var val1;
+                a.forEach(function (item) {
+                    if (item.name == field) {
+                        val1 = item.value;
                     }
-                    item['DOGOVOR_PERIOD_START'] = parseDate(item['DOGOVOR_PERIOD_START']);
-                    item['DOGOVOR_PERIOD_END'] = parseDate(item['DOGOVOR_PERIOD_END']);
-                    item['DOGOVOR_DATE'] = parseDate(item['DOGOVOR_DATE']);
-                    item['DOGOVOR_NUMBER_AND_DATE'] = item['DOGOVOR_DATE'] == '' ?
-                        item['DOGOVOR_NUMBER']
-                        :
-                        item['DOGOVOR_NUMBER'] + ' от ' + item['DOGOVOR_DATE'];
-
-                    item['DOGOVOR_SUM'] = parseNumber(item['DOGOVOR_SUM']);
-
-
-                    var obj = [];
-                    obj.id = item['DOGOVOR_ID'] || 0;
-                    $scope.headers.forEach(function (elem) {
-                    obj.push({ value: item[elem.field], name: elem.field, grow: elem.width });
-                    if (elem.field == "DOGOVOR_CODE") {
-                        obj.name = item[elem.field];
-                    }
-                    });
-                    obj.show = "";
-                    $scope.projects.push(obj);
                 });
-                if (field) {
-                    var field = field.split('.')[0];
-                    $scope.projects.sort(function (a, b) {
-                        var val1;
-                        a.forEach(function (item) {
-                            if (item.name == field) {
-                                val1 = item.value;
-                            }
-                        });
-                        var val2;
-                        b.forEach(function (item) {
-                            if (item.name == field) {
-                                val2 = item.value;
-                            }
-                        });
-                        if (field == "DOGOVOR_SUM") {
-                            val1 = parseFloat(val1.split(' ').join(''));
-                            val2 = parseFloat(val2.split(' ').join(''));
-                        }
-                        return ord == 'asc' ? val1 > val2 ? 1 : -1 : val1 < val2 ? 1 : -1;
-                    });
+                var val2;
+                b.forEach(function (item) {
+                    if (item.name == field) {
+                        val2 = item.value;
+                    }
+                });
+                if (field == "DOGOVOR_SUM") {
+                    val1 = parseFloat(val1.split(' ').join(''));
+                    val2 = parseFloat(val2.split(' ').join(''));
                 }
-                break;
-        } 
+                return ord == 'asc' ? val1 > val2 ? 1 : -1 : val1 < val2 ? 1 : -1;
+            });
+        }
     }).error(function () { debugger; }).then(function () { $scope.isContentShown = true; });
 }

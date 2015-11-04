@@ -1,4 +1,4 @@
-﻿app.controller('LayoutController', ['$scope', function ($scope) {
+app.controller('LayoutController', ['$scope', function ($scope) {
     $scope.isSideBarOpen = false;
     $scope.isMaskShown = false;
     $scope.showMask = function () {
@@ -16,7 +16,7 @@
         $scope.isSideBarOpen = false;
         $scope.hideMask();
     };
-    $scope.displaySelection = function (type) {
+    $scope.setDisplayedDogovorsType = function (type) {
         $scope.dogovorType = type;
     }
 

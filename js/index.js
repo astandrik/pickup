@@ -12,16 +12,20 @@ var app = angular.module('testApp', ['ngResource','ngRoute', 'ngMaterial', 'ngAn
                   })
             .when('/ProjectsOrderers',
                   {
-                      templateUrl: 'pages/projects_orderers.html'
+                      controller: 'ProjectsOrderersController',
+                      templateUrl: 'pages/projects_listing.html'
                   })
             .when('/ProjectsCoExecutors',
                   {
-                      templateUrl: 'pages/projects_coexecuters.html'
+                      controller: 'ProjectsCoExecutorsController',
+                      templateUrl: 'pages/projects_listing.html'
                   })
              .when('/ContractCard',
                   {
+                      controller: 'ContractCardController',
                       templateUrl: 'pages/contract_card.html'
-                  });
+                  })
+             .otherwise({redirectTo:'/Main'});
     });
 
 

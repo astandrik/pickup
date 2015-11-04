@@ -1,9 +1,10 @@
-﻿app.controller('ContractCardController', ['$scope', '$http', '$route', '$projects', function ($scope, $http, $route, $projects) {
+app.controller('ContractCardController', ['$scope', '$http', '$route', '$projects','$routeParams', function ($scope, $http, $route, $projects, $params) {
     $scope.isContentShown = true;
     $scope.has_no_dates = false;
-    var id = $route.current.params.id,
-        projectType = $route.current.params.type,
-        isNew = $route.current.params.new;
+    $scope.showProjectToolbar();
+    var id = $params.id,
+        projectType = $params.type,
+        isNew = $params.new;
 
 
 
@@ -29,7 +30,6 @@
         $scope[key] = dogovor[key];
     });
     var proj = $projects.proto.getById(id, projectType, setDogovor);
-    $scope.showProjectToolbar();
 
 
 }]);

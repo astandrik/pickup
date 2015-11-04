@@ -80,6 +80,8 @@
     <Content Include="js\controllers\LayoutController.js" />
     <Content Include="js\directives\mask.html" />
     <Content Include="js\directives\mask.js" />
+    <Content Include="js\directives\projectsTable.html" />
+    <Content Include="js\directives\projectsTable.js" />
     <Content Include="js\directives\toolBarProject.html" />
     <Content Include="js\directives\toolBarProject.js" />
     <Content Include="js\directives\toolBar.html" />
@@ -106,8 +108,7 @@
     <Content Include="js\services\projects.js" />
     <Content Include="pages\contract_card.html" />
     <Content Include="pages\login.html" />
-    <Content Include="pages\projects_coexecuters.html" />
-    <Content Include="pages\projects_orderers.html" />
+    <Content Include="pages\projects_listing.html" />
     <Content Include="pages\startpage.html" />
     <Content Include="Web.config" />
   </ItemGroup>

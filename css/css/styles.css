@@ -937,6 +937,11 @@ h2 {
 #coExecutorsTable h2 {
   font-size: 16px;
 }
+th[md-select-all="listing.projects"] {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
 table[md-data-table] > tbody > tr {
   height: unset!important;
   min-height: 50px;
