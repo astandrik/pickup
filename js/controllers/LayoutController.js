@@ -29,17 +29,18 @@ app.controller('LayoutController', ['$scope', function ($scope) {
             case 'ProjectsCoExecutors':
                 location.href = '#/ProjectsCoExecutors';
                 break;
-        }
-        switch ($scope.currentProject.type) {
-            case 'orderers':        
-                location.href = '#/ProjectsOrderers';
-                break;
-            case 'coExecutors':
-                location.href = '#/ProjectsCoExecutors';
-                break;
             default:
-                location.href = '#/ProjectsOrderers';
-                break;
+                switch ($scope.currentProject.type) {
+                    case 'orderers':
+                        location.href = '#/ProjectsOrderers';
+                        break;
+                    case 'coExecutors':
+                        location.href = '#/ProjectsCoExecutors';
+                        break;
+                    default:
+                        location.href = '#/ProjectsOrderers';
+                        break;
+                }
         }
     }
 

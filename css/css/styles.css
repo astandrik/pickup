@@ -1484,6 +1484,9 @@ body {
   padding-right: 24px;
   margin-top: 20px;
 }
+.md-select-menu-container {
+  z-index: 200;
+}
 .flex-3 {
   flex: 3;
 }

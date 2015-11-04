@@ -28,6 +28,14 @@ function parseDate(date) {
     return dateParams[1] + '.' + dateParams[0] + '.' + dateParams[2];
 }
 
+Array.prototype.findByParam = function (paramName, paramValue) {
+    for (var i = 0; i < this.length; i++) {
+        if (this[i][paramName] == paramValue) {
+            return this[i];
+        }
+    }
+}
+
 function getProjects($projects, $scope, type) {
     $projects[type].success(function (json) {
         $scope.projects = [];
@@ -62,18 +70,8 @@ function getProjects($projects, $scope, type) {
         if (field) {
             var field = field.split('.')[0];
             $scope.projects.sort(function (a, b) {
-                var val1;
-                a.forEach(function (item) {
-                    if (item.name == field) {
-                        val1 = item.value;
-                    }
-                });
-                var val2;
-                b.forEach(function (item) {
-                    if (item.name == field) {
-                        val2 = item.value;
-                    }
-                });
+                var val1 = a.findByParam('name', field).value;
+                var val2 = b.findByParam('name', field).value;
                 if (field == "DOGOVOR_SUM") {
                     val1 = parseFloat(val1.split(' ').join(''));
                     val2 = parseFloat(val2.split(' ').join(''));
