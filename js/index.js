@@ -25,6 +25,11 @@ var app = angular.module('testApp', ['ngResource','ngRoute', 'ngMaterial', 'ngAn
                       controller: 'ContractCardController',
                       templateUrl: 'pages/contract_card.html'
                   })
+             .when('/ContractFinance',
+                  {
+                      controller: 'ContractFinanceController',
+                      templateUrl: 'pages/contract_finance.html'
+                  })
              .otherwise({redirectTo:'/Main'});
     });
 

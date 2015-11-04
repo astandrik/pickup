@@ -1,4 +1,4 @@
-app.controller('ContractCardController', ['$scope', '$http', '$route', '$projects','$routeParams', function ($scope, $http, $route, $projects, $params) {
+app.controller('ContractFinanceController', ['$scope', '$http', '$route', '$projects', '$routeParams', function ($scope, $http, $route, $projects, $params) {
     $scope.isContentShown = true;
     $scope.has_no_dates = false;
     $scope.showProjectToolbar();
@@ -6,7 +6,7 @@ app.controller('ContractCardController', ['$scope', '$http', '$route', '$project
         projectType = $params.type,
         isNew = $params.new;
     $scope.setCurrentProject(id, projectType);
-    $scope.activateCard();
+    $scope.activateFinance();
     var dogovor = $projects.createNew();
     function setDogovor(proj) {
         Object.keys(proj).forEach(function (key) {

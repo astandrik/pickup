@@ -1,6 +1,7 @@
 app.controller('LayoutController', ['$scope', function ($scope) {
     $scope.isSideBarOpen = false;
     $scope.isMaskShown = false;
+    $scope.currentProject = {};
     $scope.showMask = function () {
         $scope.isMaskShown = true;
     };
@@ -29,6 +30,17 @@ app.controller('LayoutController', ['$scope', function ($scope) {
                 location.href = '#/ProjectsCoExecutors';
                 break;
         }
+        switch ($scope.currentProject.type) {
+            case 'orderers':    
+                location.href = '#/ProjectsOrderers';
+                break;
+            case 'coExecutors':
+                location.href = '#/ProjectsCoExecutors';
+                break;
+            default:
+                location.href = '#/ProjectsOrderers';
+                break;
+        }
     }
 
     $scope.showGridToolbar = function () {
@@ -40,11 +52,42 @@ app.controller('LayoutController', ['$scope', function ($scope) {
         $scope.isGridShown = false;
         $scope.isProjectShown = true;
     }
+
+
     $scope.setToolBarHeader = function (title) {
         $scope.toolBarHeader = title;
         $scope.projectName = title;
     }
-    $scope.openProject = function (id, type) {
-        location.href = "#/ContractCard?id=" + id + "&type=" + type;
-    };
+
+    $scope.setCurrentProject = function(id, type) {
+        $scope.currentProject.id = id;
+        $scope.currentProject.type = type;
+    }
+
+    $scope.activateCard = function () {
+        $scope.isCardActive = true;
+        $scope.isFinanceActive = false;
+    }
+
+    $scope.activateFinance = function () {
+        $scope.isCardActive = false;
+        $scope.isFinanceActive = true;
+    }
+
+    $scope.goToCard = function (id, type) {
+        if (id == undefined || type == undefined) {
+            location.href = "#/ContractCard?id=" + $scope.currentProject.id + "&type=" + $scope.currentProject.type;
+        } else {
+            location.href = "#/ContractCard?id=" + id + "&type=" + type;
+        }
+    }
+
+    $scope.goToFinance = function (id, type) {
+        if (id == undefined || type == undefined) {
+            location.href = "#/ContractFinance?id=" + $scope.currentProject.id + "&type=" + $scope.currentProject.type;
+        } else {
+            location.href = "#/ContractFinance?id=" + id + "&type=" + type;
+        }
+    }
+
 }]);

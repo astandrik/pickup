@@ -16,16 +16,16 @@
 
             </div>
             <ul class="nav nav-tabs" role="tablist">
-               <li class="active">
-                   <a href="#/Projects" role="tab" data-toggle="tab">
+               <li ng-class="{'active' : isCardActive}">
+                   <a href ng-click="goToCard()" role="tab" data-toggle="tab">
                        <span>ОБЩИЕ СВЕДЕНИЯ</span>
                    </a>
                </li>
-               <li>
-                   <a >
-                       <span>ФИНАНСИРОВАНИЕ</span>
-                   </a>
-               </li>
+                <li ng-class="{'active' : isFinanceActive}">
+                    <a href ng-click ="goToFinance()" role="tab" data-toggle="tab" >
+                        <span>ФИНАНСИРОВАНИЕ</span>
+                    </a>
+                </li>
                <li>
                    <a>
                        <span>ДОКУМЕНТАЦИЯ</span>
