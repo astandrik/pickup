@@ -92,6 +92,7 @@
     <Content Include="js\directives\toolBar.js" />
     <Content Include="js\directives\sideBar.html" />
     <Content Include="js\directives\sideBar.js" />
+    <Content Include="js\filters\numberRU.js" />
     <Content Include="js\helpers\utils.js" />
     <Content Include="js\libs.min.js" />
     <Content Include="js\libs\angular-animate.min.js" />
@@ -111,10 +112,8 @@
     <Content Include="js\libs\underscore-min.js" />
     <Content Include="js\services\projects.js" />
     <Content Include="pages\contract_card.html" />
-    <Content Include="pages\login.html" />
     <Content Include="pages\contract_finance.html" />
     <Content Include="pages\projects_listing.html" />
-    <Content Include="pages\startpage.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

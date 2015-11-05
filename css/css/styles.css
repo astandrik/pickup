@@ -1416,8 +1416,8 @@
 /* -- import Material Icons Font -------------------- */
 @font-face {
   font-family: 'Material Design Iconic Font';
-  src: url('../less/css/Material-Design-Iconic-Font.eot');
-  src: url('../less/css/Material-Design-Iconic-Font (1).eot') format('embedded-opentype'), url('../less/css/Material-Design-Iconic-Font2.woff') format('woff'), url('../less/css/Material-Design-Iconic-Font.ttf') format('truetype'), url('../less/css/Material-Design-Iconic-Font.svg') format('svg');
+  src: url('css/Material-Design-Iconic-Font.eot');
+  src: url('css/Material-Design-Iconic-Font (1).eot') format('embedded-opentype'), url('css/Material-Design-Iconic-Font2.woff') format('woff'), url('css/Material-Design-Iconic-Font.ttf') format('truetype'), url('css/Material-Design-Iconic-Font.svg') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -1616,6 +1616,23 @@ md-checkbox.md-checked .md-icon {
 }
 h2 {
   margin: unset!important;
+}
+input.pure-text {
+  pointer-events: none!important;
+  border: none!important;
+  background-color: transparent!important;
+}
+input.non-editable {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #CCCCCC;
+  pointer-events: none;
+  background-color: #eeeeee;
+}
+input.editable {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #CCCCCC;
 }
 @keyframes appear {
   from {

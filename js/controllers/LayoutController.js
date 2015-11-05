@@ -1,7 +1,10 @@
 app.controller('LayoutController', ['$scope', function ($scope) {
     $scope.isSideBarOpen = false;
+    $scope.isFinanceActive = false;
+    $scope.isCardActive = false;
     $scope.isMaskShown = false;
     $scope.currentProject = {};
+    $scope.isFinanceEditing = false;
     $scope.showMask = function () {
         $scope.isMaskShown = true;
     };
@@ -89,6 +92,10 @@ app.controller('LayoutController', ['$scope', function ($scope) {
         } else {
             location.href = "#/ContractFinance?id=" + id + "&type=" + type;
         }
+    }
+
+    $scope.toggleFinanceEdit = function () {
+        $scope.isFinanceEditing = !$scope.isFinanceEditing;
     }
 
 }]);

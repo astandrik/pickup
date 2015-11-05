@@ -2,14 +2,6 @@ var app = angular.module('testApp', ['ngResource','ngRoute', 'ngMaterial', 'ngAn
     
     app.config(function ($routeProvider) {
         $routeProvider
-            .when('/',
-                  {
-                      templateUrl: 'pages/login.html'
-                  })
-            .when('/Main',
-                  {
-                      templateUrl: 'pages/startpage.html'
-                  })
             .when('/ProjectsOrderers',
                   {
                       controller: 'ProjectsOrderersController',
@@ -30,7 +22,7 @@ var app = angular.module('testApp', ['ngResource','ngRoute', 'ngMaterial', 'ngAn
                       controller: 'ContractFinanceController',
                       templateUrl: 'pages/contract_finance.html'
                   })
-             .otherwise({redirectTo:'/Main'});
+             .otherwise({ redirectTo: '/ProjectsOrderers' });
     });
 
 

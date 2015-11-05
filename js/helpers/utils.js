@@ -8,6 +8,7 @@ function parseNumber(num) {
     return num.reverse().join('');
 }
 
+
 function getDateFromJSDate(date) {
     var dd = date.getDate().toString().length == 1 ? '0' + date.getDate() : date.getDate() ;
     var mm = date.getMonth().toString().length == 1 ? '0' + (date.getMonth()+1) : date.getMonth()+1;

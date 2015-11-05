@@ -1,4 +1,4 @@
-﻿app.factory('$projects', ['$http', function ($http) {
+﻿app.factory('$projects', ['$http', '$filter', function ($http, $filter) {
     function Project(data) {
         function setDefaults() {
             this.has_no_dates = false;
@@ -35,7 +35,7 @@
             financeHeaders.forEach(function (header) {
                 var row = [{ value: header, name: 'Наименование статей затрат' }, { value: '0', name: 'Всего (руб.)' }];
                 for (var i = startDate; i <= endDate; i++) {
-                    row.push({ value: '0', name: i });
+                    row.push({ value: '0', name: i , cl: Math.random() * (100 - 1) + 1 > 30 ? 'editable' : 'non-editable' });
                 }
                 rows.push(row);
             });
@@ -44,7 +44,24 @@
                 headers: headers,
                 rows: rows,
                 start: startDate,
-                end: endDate
+                end: endDate,
+                reCalculateFinanceStructure: function (e) {
+                    rows.forEach(function (row) {
+                        var overall = row.findByParam('name', 'Всего (руб.)');
+                        overall.value = 0;
+                        for (var i = 2; i < row.length; i++) {
+                            if ((e.which < 48 || e.which > 57) && (e.which != 8)) {
+                                row[i].value = row[i].oldVal ? row[i].oldVal : '0';
+                                continue;
+                            }
+                            var val = row[i].value.split(' ').join('');
+                            overall.value += parseInt(val);
+                            row[i].value = $filter('numberRU')(val);
+                            row[i].oldVal = row[i].value;
+                        }
+                        overall.value = $filter('numberRU')(overall.value);
+                    })
+                }
             }
         };
         function setEmpty() {

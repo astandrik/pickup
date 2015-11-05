@@ -1,9 +1,7 @@
 app.directive('financeDogovorStructureTable', function () {
     return {
         restrict: 'E',
-        scope: {
-            listing: '='
-        },
+        scope: true,
         templateUrl: 'js/directives/financeDogovorStructureTable.html'
     };
 });
