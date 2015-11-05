@@ -1511,6 +1511,9 @@ body {
 .flex.justify-center {
   justify-content: center;
 }
+.flex.justify-end {
+  justify-content: flex-end;
+}
 .flex.flex-wrap {
   flex-wrap: wrap;
 }
@@ -1658,6 +1661,9 @@ input.editable {
 #financeDogovorStructureTable {
   margin-top: -140px;
 }
+#financeDogovorStructureTable md-select .md-select-value {
+  color: black !important;
+}
 #financeDogovorStructureTable tr,
 #financeDogovorStructureTable td {
   border: none!important;
@@ -1679,6 +1685,12 @@ input.editable {
 }
 #financeDogovorStructureTable th:first-child div {
   float: left;
+}
+#financeDogovorStructureTable tr:nth-child(7),
+#financeDogovorStructureTable tr:nth-child(9),
+#financeDogovorStructureTable tr:nth-child(11) {
+  border-top: 1px solid!important;
+  border-top-color: rgba(0, 0, 0, 0.5) !important;
 }
 th[md-select-all="listing.projects"] {
   display: flex;

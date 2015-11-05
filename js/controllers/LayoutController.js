@@ -1,4 +1,17 @@
 app.controller('LayoutController', ['$scope', function ($scope) {
+    $.ajax ({
+        method: 'GET',
+        url: 'testData/projectsFinancies.json',
+        async: false,
+        success: function (data) { window.financies = data; }
+    });
+    $.ajax({
+        method: 'GET',
+        url: 'testData/projectsOrderers.json',
+        async: false,
+        success: function (data) { window.orderers = data; }
+    });
+
     $scope.isSideBarOpen = false;
     $scope.isFinanceActive = false;
     $scope.isCardActive = false;

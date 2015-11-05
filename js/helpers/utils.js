@@ -26,7 +26,7 @@ function parseDate(date) {
     if (dateParams[0] == 'null') return '';
     if (dateParams[0].length == 1) dateParams[0] = '0' + dateParams[0];
     if (dateParams[1].length == 1) dateParams[1] = '0' + dateParams[1];
-    return dateParams[1] + '.' + dateParams[0] + '.' + dateParams[2];
+    return dateParams[0] + '.' + dateParams[1] + '.' + dateParams[2];
 }
 
 Array.prototype.findByParam = function (paramName, paramValue) {
@@ -38,11 +38,11 @@ Array.prototype.findByParam = function (paramName, paramValue) {
 }
 
 function getProjects($projects, $scope, type) {
-    $projects[type].success(function (json) {
-        $scope.projects = [];
+    //$projects[type].success(function (json) {
+    $scope.projects = [];
         var field = $scope.sort_order;
         var ord = $scope.order;
-        json.forEach(function (item) {
+        window.orderers.forEach(function (item) {
                     for (var e in item) {
                         if (item[e] == null || item[e] == 'null') {
                             item[e] = '';
@@ -80,5 +80,5 @@ function getProjects($projects, $scope, type) {
                 return ord == 'asc' ? val1 > val2 ? 1 : -1 : val1 < val2 ? 1 : -1;
             });
         }
-    }).error(function () { debugger; }).then(function () { $scope.isContentShown = true; });
+   // }).error(function () { debugger; }).then(function () { $scope.isContentShown = true; });
 }
