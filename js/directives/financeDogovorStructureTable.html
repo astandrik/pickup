@@ -18,17 +18,17 @@
                 <tr class="flex layout-row">
                     <th style="flex: 1" name="Наименование статей затрат"></th>
                     <th style="flex: 1" name="Всего (руб.)"></th>
-                    <th ng-repeat="header in data.headers" 
-                        style="flex: 1" 
+                    <th ng-repeat="header in data.dogovorFinanceStructure.headers"
+                        style="flex: 1"
                         name="{{header.name}}"></th>
                 </tr>
             </thead>
             <tbody>
-                <tr class="flex layout-row"  ng-repeat="row in data.rows">
+                <tr class="flex layout-row"  ng-repeat="row in data.dogovorFinanceStructure.rows">
                     <td ng-repeat="property in row | limitTo : 1 : 0" class="flex layout-row align-center" style="flex: 1" name="{{property.name}}"><span>{{ property.value}}</span></td>
-                    <td ng-repeat="property in row | limitTo : 1 : 1 " class="flex layout-row align-center" style="flex: 1" name="{{property.name}}"><input class="pure-text" ng-keyup="data.reCalculateFinanceStructure($event)"
+                    <td ng-repeat="property in row | limitTo : 1 : 1 " class="flex layout-row align-center" style="flex: 1" name="{{property.name}}"><input class="pure-text" ng-keyup="data.dogovorFinanceStructure.reCalculateFinanceStructure($event)"
                                                                                                                                                               ng-model="property.value" value="{{ property.value | number}}"/></td>
-                    <td ng-repeat="property in row | limitTo : 999 : 2 " class="flex layout-row align-center" style="flex: 1" name="{{property.name}}"><input class="{{property.cl}}" ng-class="{'pure-text' : !isFinanceEditing}" ng-keyup="data.reCalculateFinanceStructure($event)"
+                    <td ng-repeat="property in row | limitTo : 999 : 2 " class="flex layout-row align-center" style="flex: 1" name="{{property.name}}"><input class="{{property.cl}}" ng-class="{'pure-text' : !isFinanceEditing}" ng-keyup="data.dogovorFinanceStructure.reCalculateFinanceStructure($event)"
                                                                                                                                                               ng-model="property.value" value="{{ property.value | number}}"/></td>
                 </tr>
             </tbody>

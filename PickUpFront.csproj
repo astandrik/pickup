@@ -140,6 +140,7 @@
     <Content Include="css\Material-Design-Iconic-Font %281%29.eot" />
     <Content Include="css\Material-Design-Iconic-Font2.woff" />
     <Content Include="css\Material-Design-Iconic-Font.ttf" />
+    <Content Include="testData\projectsFinancies.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

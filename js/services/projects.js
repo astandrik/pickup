@@ -91,6 +91,7 @@
             setEmpty.call(this);
         }
         if (data) {
+            var self = this;
             this.id = data.DOGOVOR_ID;
             this.contract_status = data.DOGOVOR_STATUS || this.contract_status;
             this.contract_executor = data.DOGOVOR_EXECUTOR_NAME || this.contract_executor;
@@ -105,6 +106,62 @@
             this.contract_start_date = new Date(this.contract_start_date);
             this.contract_end_date = new Date(this.contract_end_date);
             this.contract_date = new Date(this.contract_date);
+
+
+            $http.get('testData/projectsFinancies.json').success(function (data) {
+                for (var i = 0; i < data.length; i++) {
+                    if (self.id == data[i][data[i].length - 1].ID) {
+                        var financeData = data[i];
+                        var rows = [];
+                        var headers = [];
+                        var financeHeaders = ['ФОТ', 'ОСН', 'Материалы', 'Командировки', 'Прочие', 'Накладные',
+              'Себестоимость собственных работ', 'Смежники', 'Полная себестоимость', 'Прибыль', 'Цена'];
+                        var startDate = financeData[0].StartYear;
+                        var endDate = financeData[0].CostsValues.length + startDate - 1;
+                        for (var i = startDate; i <= endDate; i++) {
+                            headers.push({ name: i });
+                        }
+                        financeHeaders.forEach(function (header, j) {
+                            var row = [{ value: header, name: 'Наименование статей затрат' }, { value: '0', name: 'Всего (руб.)' }];
+                            var k = 0;
+                            for (var i = startDate; i <= endDate; i++) {
+                                row.push({ value: financeData[j].CostsValues[k++], name: i, cl: Math.random() * (100 - 1) + 1 > 30 ? 'editable' : 'non-editable' });
+                            }
+                            rows.push(row);
+                        });
+                        self.dogovorFinanceStructure = {
+                            headers: headers,
+                            rows: rows,
+                            start: startDate,
+                            end: endDate,
+                            reCalculateFinanceStructure: function (e) {
+                                rows.forEach(function (row) {
+                                    var overall = row.findByParam('name', 'Всего (руб.)');
+                                    overall.value = 0;
+                                    for (var i = 2; i < row.length; i++) {
+                                        if ((e.which < 48 || e.which > 57) && (e.which != 8)) {
+                                            row[i].value = row[i].oldVal ? row[i].oldVal : '0';
+                                            continue;
+                                        }
+                                        var val = row[i].value.toString().split(' ').join('');
+                                        overall.value += parseInt(val);
+                                        row[i].value = $filter('numberRU')(val);
+                                        row[i].oldVal = row[i].value;
+                                    }
+                                    overall.value = $filter('numberRU')(overall.value);
+                                })
+                            }
+                        }
+                        self.dogovorFinanceStructure.reCalculateFinanceStructure({ which: 49 });
+                    }
+                }
+            });
+            
+          
+           
+
+
+
         }
         return this;
     }

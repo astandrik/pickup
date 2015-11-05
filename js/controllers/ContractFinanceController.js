@@ -12,7 +12,7 @@ app.controller('ContractFinanceController', ['$scope', '$http', '$route', '$proj
         Object.keys(proj).forEach(function (key) {
             $scope[key] = proj[key];
         });
-        $scope.data = proj.dogovorFinanceStructure;
+        $scope.data = proj;
         var headDogovor = $scope.contract_date == "" ||
             $scope.contract_date == null  ||
             $scope.contract_date.toString() == "Invalid Date"
