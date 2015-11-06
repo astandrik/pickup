@@ -93,8 +93,8 @@
             this.contract_sum_model = "";
             this.contract_sum = 0;
             this.contract_currency = "";
-            this.contract_start_date = new Date("01.01.2013");
-            this.contract_end_date = new Date("01.01.2013");
+            this.contract_start_date = null;
+            this.contract_end_date = null;
             this.contract_name = "";
             this.contract_code = "";
             this.contract_number = "";

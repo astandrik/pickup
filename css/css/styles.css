@@ -1505,8 +1505,17 @@ body {
 .flex.justify-between {
   justify-content: space-between;
 }
+.flex.justify-start {
+  justify-content: flex-start;
+}
 .flex.align-center {
   align-items: center;
+}
+.flex.align-start {
+  align-items: flex-start;
+}
+.flex.align-end {
+  align-items: flex-end;
 }
 .flex.justify-center {
   justify-content: center;
@@ -1689,8 +1698,10 @@ input.editable {
 #financeDogovorStructureTable tr:nth-child(7),
 #financeDogovorStructureTable tr:nth-child(9),
 #financeDogovorStructureTable tr:nth-child(11) {
-  border-top: 1px solid!important;
-  border-top-color: rgba(0, 0, 0, 0.5) !important;
+  border-top: 5px solid!important;
+  border-top-color: #eeeeee!important;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 th[md-select-all="listing.projects"] {
   display: flex;

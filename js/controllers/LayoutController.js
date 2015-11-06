@@ -1,4 +1,4 @@
-﻿app.controller('LayoutController', ['$scope', function ($scope) {
+﻿app.controller('LayoutController', ['$scope','dialogs', function ($scope,dialogs) {
     $scope.isSideBarOpen = false;
     $scope.isFinanceActive = false;
     $scope.isCardActive = false;
@@ -102,6 +102,20 @@
 
     $scope.toggleFinanceEdit = function () {
         $scope.isFinanceEditing = !$scope.isFinanceEditing;
+    }
+
+    $scope.launchPopup = function (which) {
+            switch (which) {
+                case 'addDogovor':
+                    var dlg = dialogs.create('js/dialogs/addProject.html', 'AddDogovorDialogController', {}, 'lg');
+                    dlg.result.then(function (name) {
+                        $scope.name = name;
+                    }, function () {
+                        if (angular.equals($scope.name, ''))
+                            $scope.name = 'You did not enter in your name!';
+                    });
+                    break;
+        }; // end launch
     }
 
 }]);

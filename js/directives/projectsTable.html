@@ -1,5 +1,5 @@
     <md-data-table-toolbar ng-hide="selected.length || filter.show" class="flex layout-row justify-between">
-        <h2 class="md-title title-clickable" onclick="location.href = '#/ContractCard?new=1'">ДОБАВИТЬ ДОГОВОР</h2>
+        <h2 class="md-title title-clickable" ng-click="listing.launchPopup('addDogovor')">ДОБАВИТЬ ДОГОВОР</h2>
         <div>
             <ng-md-icon icon="sort" size="30px"></ng-md-icon>
             <ng-md-icon icon="file_download" size="30px"></ng-md-icon>

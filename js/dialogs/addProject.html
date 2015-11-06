@@ -1,0 +1,80 @@
+<div class="modal-header">
+    <h3 style="border-bottom:none" class="modal-title">Новый договор с заказчиком</h3>
+</div>
+<div class="modal-body">
+    <div class='flex layout-column justify-between flex-wrap'>
+        <div class="padded-area">
+            <div class="flex layout-column">
+                <div class='flex layout-row align-center'>
+                    <md-input-container style="flex:3">
+                        <label>Заказчик<span style="color:red;font-size:14px"> *</span></label>
+                        <input ng-model="dogovor.contract_order">
+                    </md-input-container>
+                    <md-input-container style="flex:2">
+                        <label>Тип договора<span style="color:red;font-size:14px"> *</span></label>
+                        <input ng-model="dogovor.contract_type">
+
+                    </md-input-container>
+                    <md-input-container style="flex:1">
+                        <label>Статус<span style="color:red;font-size:14px"> *</span></label>
+                        <input ng-model="dogovor.contract_status">
+                    </md-input-container>
+                </div>
+
+                <div class='flex layout-row align-center'>
+                    <md-input-container  style="flex:3">
+                        <label>Шифр</label>
+                        <input ng-model="dogovor.contract_code">
+                    </md-input-container>
+                    <md-input-container style="flex:2">
+                        <label>Номер договора</label>
+                        <input ng-model="dogovor.contract_number">
+                    </md-input-container>
+                    <md-input-container style="flex:1">
+                        <label>Дата подписания</label>
+                        <input type="date" ng-model="dogovor.contract_date">
+                    </md-input-container>
+                </div>
+
+                <div class='flex layout-row align-center'>
+                    <div class='flex layout-row justify-start' style="flex:3;padding-right:20px">
+                        <md-input-container style="max-width:100px" class="flex layout-column justify-center align-start">
+                            <label>Дата начала</label>
+                            <input type="date" style="width:100px; margin-top:0" ng-change="dogovor.reCalculateProject()" ng-model="dogovor.contract_start_date">
+                        </md-input-container>
+                        <span style="line-height: 100px;padding-left:20px;padding-right:20px">—</span>
+                        <md-input-container style="max-width:100px" class="flex layout-column justify-center align-start">
+                            <label>Дата окончания</label>
+                            <input type="date" style="width:100px; margin-top:0" ng-change="dogovor.reCalculateProject()" ng-model="dogovor.contract_end_date">
+                        </md-input-container>
+                    </div>
+                    <div class='flex layout-row' style="flex:2">
+                        <md-input-container flex>
+                            <label>Сумма (руб.)</label>
+                            <input ng-model="dogovor.contract_sum_rub">
+                        </md-input-container>
+                    </div>
+                    <div class='flex layout-row' style="flex:1">
+                        <md-input-container flex>
+                            <label>Модель цены</label>
+                            <input ng-model="dogovor.contract_sum_model">
+                        </md-input-container>
+                    </div>
+                </div>
+                <div class='flex layout-row' style="flex:1">
+                    <div class="form-group flex layout-column">
+                        <label for="name">Название</label>
+                        <textarea class="form-control" rows="3" ng-model="dogovor.contract_name" flex></textarea>
+                    </div>
+                </div>
+                <div class='flex layout-row justify-between' style="flex:1">
+                    <md-button class="md-raised" style="flex:1;margin:0" ng-click="cancel()">Отменить</md-button>
+                    <md-button class="md-raised md-primary" style="flex:1;margin:0" ng-click="save()">Создать</md-button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+
+</div>

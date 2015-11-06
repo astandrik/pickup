@@ -1,4 +1,4 @@
-var app = angular.module('testApp', ['ngResource','ngRoute', 'ngMaterial', 'ngAnimate', 'md.data.table','ngMdIcons']);
+var app = angular.module('testApp', ['ngResource', 'ngRoute', 'ngMaterial', 'ngAnimate', 'md.data.table', 'ngMdIcons', 'ui.bootstrap', 'dialogs.main', 'pascalprecht.translate']);
     
     app.config(function ($routeProvider) {
         $routeProvider
