@@ -1,17 +1,4 @@
-app.controller('LayoutController', ['$scope', function ($scope) {
-    $.ajax ({
-        method: 'GET',
-        url: 'testData/projectsFinancies.json',
-        async: false,
-        success: function (data) { window.financies = data; }
-    });
-    $.ajax({
-        method: 'GET',
-        url: 'testData/projectsOrderers.json',
-        async: false,
-        success: function (data) { window.orderers = data; }
-    });
-
+﻿app.controller('LayoutController', ['$scope', function ($scope) {
     $scope.isSideBarOpen = false;
     $scope.isFinanceActive = false;
     $scope.isCardActive = false;
@@ -100,6 +87,12 @@ app.controller('LayoutController', ['$scope', function ($scope) {
     }
 
     $scope.goToFinance = function (id, type) {
+        if (window.currentProject && window.currentProject) {
+            if (!window.currentProject.contract_start_date  || !window.currentProject.contract_end_date) {
+                alert('Введите даты начала и окончания!');
+                return;
+            }
+        }
         if (id == undefined || type == undefined) {
             location.href = "#/ContractFinance?id=" + $scope.currentProject.id + "&type=" + $scope.currentProject.type;
         } else {

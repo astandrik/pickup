@@ -15,7 +15,7 @@ app.controller('ContractCardController', ['$scope', '$http', '$route', '$project
         var headDogovor = $scope.contract_date == "" ||
             $scope.contract_date == null  ||
             $scope.contract_date.toString() == "Invalid Date"
-            ? '(' + $scope.contract_number + ')' : " (" + $scope.contract_number + ' от ' + parseDate($scope.contract_date) + ")";
+            ? '(' + $scope.contract_number + ')' : " (" + $scope.contract_number + ' от ' + getDateFromJSDate(parseDate($scope.contract_date)) + ")";
         switch (projectType) {
             case 'orderers':
                 $scope.setToolBarHeader($scope.contract_code + headDogovor);

@@ -106,11 +106,11 @@
                             <div flex="20" class='flex layout-row'>
                                 <md-input-container flex ng-class="{'show' : !has_no_dates, 'hidden' : has_no_dates}">
                                     <label>Дата начала</label>
-                                    <input type="date" ng-model="contract_start_date">
+                                    <input type="date" ng-change="reCalculateProject()" ng-model="contract_start_date">
                                 </md-input-container>
                                 <md-input-container flex ng-class="{'show' : !has_no_dates, 'hidden' : has_no_dates}">
                                     <label>Дата окончания</label>
-                                    <input type="date" ng-model="contract_end_date">
+                                    <input type="date" ng-change="reCalculateProject()" ng-model="contract_end_date">
                                 </md-input-container>
                                 <md-checkbox aria-label="Бессрочный" ng-model="has_no_dates">
                                 </md-checkbox>

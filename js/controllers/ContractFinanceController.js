@@ -8,6 +8,7 @@ app.controller('ContractFinanceController', ['$scope', '$http', '$route', '$proj
         isNew = $params.new;
     $scope.setCurrentProject(id, projectType);
     $scope.activateFinanceTab();
+    if(window.currentProject) window.currentProject.reCalculateProject();
     var dogovor = $projects.createNew();
     function setDogovor(proj) {
         Object.keys(proj).forEach(function (key) {
@@ -17,7 +18,7 @@ app.controller('ContractFinanceController', ['$scope', '$http', '$route', '$proj
         var headDogovor = $scope.contract_date == "" ||
             $scope.contract_date == null  ||
             $scope.contract_date.toString() == "Invalid Date"
-            ? '(' + $scope.contract_number + ')' : " (" + $scope.contract_number + ' от ' + parseDate($scope.contract_date) + ")";
+            ? '(' + $scope.contract_number + ')' : " (" + $scope.contract_number + ' от ' + getDateFromJSDate(parseDate($scope.contract_date)) + ")";
         switch (projectType) {
             case 'orderers':
                 $scope.setToolBarHeader($scope.contract_code + headDogovor);
