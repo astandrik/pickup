@@ -76,6 +76,7 @@
     <Content Include="img\icons\project.svg" />
     <Content Include="index.html" />
     <Content Include="js\controllers\AddDogovorDialogController.js" />
+    <Content Include="js\controllers\ContractDocumentsController.js" />
     <Content Include="js\controllers\ContractFinanceController.js" />
     <Content Include="js\controllers\ProjectsCoExecutorsController.js" />
     <Content Include="js\controllers\ProjectsOrderersController.js" />
@@ -114,10 +115,12 @@
     <Content Include="js\libs\jquery-1.11.3.min.js" />
     <Content Include="js\libs\jquery-ui.min.js" />
     <Content Include="js\libs\md-data-table.min.js" />
+    <Content Include="js\libs\ng-flow-standalone.min.js" />
     <Content Include="js\libs\ui-bootstrap-tpls-0.11.0.min.js" />
     <Content Include="js\libs\underscore-min.js" />
     <Content Include="js\services\projects.js" />
     <Content Include="pages\contract_card.html" />
+    <Content Include="pages\contract_documents.html" />
     <Content Include="pages\contract_finance.html" />
     <Content Include="pages\projects_listing.html" />
     <Content Include="Web.config" />

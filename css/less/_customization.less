@@ -50,6 +50,9 @@ body {
     &.justify-start {
         justify-content: flex-start;
     }
+    &.justify-around {
+        justify-content: space-around;
+    }
     &.align-center {
         align-items: center;
     }
@@ -70,6 +73,15 @@ body {
     }
 }
 
+
+.file-loader {
+    padding-top:200px;
+    padding-bottom:200px;
+    padding-left:50px;
+    padding-right:50px;
+    border:2px dashed black;
+    border-radius:10px;
+}
 .nav-tabs {
     border-bottom:none;
 }
@@ -93,6 +105,10 @@ body {
 .page-content.show {
     visibility:visible;
     animation: appear 0.2s; 
+}
+
+.growing {
+    animation: grow 7s;
 }
 
 .hidden {
@@ -230,4 +246,9 @@ input.editable {
 @keyframes appear {
     from {opacity:0}
     to {opacity:1}    
+}
+
+@keyframes grow {
+    from {width:0}
+    to {width: 100%}    
 }

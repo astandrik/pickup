@@ -24,11 +24,11 @@
                         <span>ФИНАНСИРОВАНИЕ</span>
                     </a>
                 </li>
-               <li>
-                   <a>
-                       <span>ДОКУМЕНТАЦИЯ</span>
-                   </a>
-               </li>
+                <li ng-class="{'active' : isDocumentsActive}">
+                    <a href ng-click="goToDocuments()" role="tab">
+                        <span>ДОКУМЕНТАЦИЯ</span>
+                    </a>
+                </li>
                 <li>
                     <a>
                         <span>КАЛЕНДАРНЫЙ ПЛАН</span>
@@ -72,6 +72,25 @@
                         <div>ГРАФИК ПЛАТЕЖЕЙ</div>
                     </a>
                 </li>
+            </ul>
+        </md-toolbar>
+    </md-content>
+</div>
+<div class='toolbar second-level' ng-class="{'hidden': !isDocumentsActive}" ng-cloak>
+    <md-content style="overflow:hidden">
+        <md-toolbar class="flex layout-row justify-center">
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="active">
+                    <a role="tab" data-toggle="tab">
+                        <div>КОНКУРСНАЯ/ОТБОРОЧНАЯ</div>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <div>ПО ДОГОВОРНОЙ И КОНТРАКТНОЙ ДЕЯТЕЛЬНОСТИ</div>
+                    </a>
+                </li>
+
             </ul>
         </md-toolbar>
     </md-content>

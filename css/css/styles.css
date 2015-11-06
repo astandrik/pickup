@@ -1508,6 +1508,9 @@ body {
 .flex.justify-start {
   justify-content: flex-start;
 }
+.flex.justify-around {
+  justify-content: space-around;
+}
 .flex.align-center {
   align-items: center;
 }
@@ -1525,6 +1528,14 @@ body {
 }
 .flex.flex-wrap {
   flex-wrap: wrap;
+}
+.file-loader {
+  padding-top: 200px;
+  padding-bottom: 200px;
+  padding-left: 50px;
+  padding-right: 50px;
+  border: 2px dashed black;
+  border-radius: 10px;
 }
 .nav-tabs {
   border-bottom: none;
@@ -1544,6 +1555,9 @@ body {
 .page-content.show {
   visibility: visible;
   animation: appear 0.2s;
+}
+.growing {
+  animation: grow 7s;
 }
 .hidden {
   visibility: hidden;
@@ -1652,6 +1666,14 @@ input.editable {
   }
   to {
     opacity: 1;
+  }
+}
+@keyframes grow {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
   }
 }
 .tablebutton:active {

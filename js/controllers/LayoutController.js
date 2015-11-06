@@ -71,11 +71,19 @@
     $scope.activateCardTab = function () {
         $scope.isCardActive = true;
         $scope.isFinanceActive = false;
+        $scope.isDocumentsActive = false;
     }
 
     $scope.activateFinanceTab = function () {
         $scope.isCardActive = false;
         $scope.isFinanceActive = true;
+        $scope.isDocumentsActive = false;
+    }
+
+    $scope.activateDocumentsTab = function () {
+        $scope.isCardActive = false;
+        $scope.isFinanceActive = false;
+        $scope.isDocumentsActive = true;
     }
 
     $scope.goToCard = function (id, type) {
@@ -97,6 +105,15 @@
             location.href = "#/ContractFinance?id=" + $scope.currentProject.id + "&type=" + $scope.currentProject.type;
         } else {
             location.href = "#/ContractFinance?id=" + id + "&type=" + type;
+        }
+    }
+
+
+    $scope.goToDocuments = function (id, type) {
+        if (id == undefined || type == undefined) {
+            location.href = "#/ContractDocuments?id=" + $scope.currentProject.id + "&type=" + $scope.currentProject.type;
+        } else {
+            location.href = "#/ContractDocuments?id=" + id + "&type=" + type;
         }
     }
 

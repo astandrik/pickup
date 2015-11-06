@@ -1,0 +1,51 @@
+﻿
+<div id="dogovorstTable" class='page-content flex layout-row justify-between' >
+
+    <div flow-init
+         flow-files-submitted="$flow.upload()" class="flex layout-row justify-around" style="margin-top:-150px;padding-right:100px;">
+        <div class="drop file-loader flex layout-column " flow-drop ng-class="dropClass" style="flex:1">
+            <span class="btn btn-default" flow-btn>Загрузить файл</span>
+            <span class="btn btn-default" flow-btn flow-directory ng-show="$flow.supportDirectory">Загрузить папку</span>
+            <span style="text-align:center"><b>ИЛИ</b></span>
+            <span>Перетащите в пунктирную область</span>
+        </div>
+
+
+        <div style="flex:6; padding-left:100px">
+
+            <md-data-table-container>
+                <table md-data-table md-progress="deferred">
+                    <thead md-order="listing.query.order" md-trigger="listing.onOrderChange">
+                        <tr class="flex layout-row">
+                            <th style="flex: 1" name="Название"></th>
+                            <th style="flex: 1" name="Размер"></th>
+                            <th style="flex: 1" name="Прогресс"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="flex layout-row" ng-repeat="file in $flow.files" >
+                            <td class="flex layout-row align-center" style="flex:1"><span>{{file.relativePath}} </span></td>
+                            <td class="flex layout-row align-center" style="flex:1"><span>{{file.size}}bytes</span></td>
+                            <td class="flex layout-row align-center" style="flex:1">
+                                <div class="progress progress-striped" style="width:100%">
+                                    <div class="progress-bar growing" style="width:100%" role="progressbar"
+                                         aria-valuenow="{{file.progress() * 100}}"
+                                         aria-valuemin="0"
+                                         aria-valuemax="100">
+                                        <span class="sr-only">{{file.progress()}}% Complete</span>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </md-data-table-container>
+
+
+
+
+
+        </div>
+    </div>
+
+</div>

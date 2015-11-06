@@ -1,4 +1,6 @@
-var app = angular.module('testApp', ['ngResource', 'ngRoute', 'ngMaterial', 'ngAnimate', 'md.data.table', 'ngMdIcons', 'ui.bootstrap', 'dialogs.main', 'pascalprecht.translate']);
+var app = angular.module('testApp', ['ngResource', 'ngRoute', 'ngMaterial',
+    'ngAnimate', 'md.data.table', 'ngMdIcons', 'ui.bootstrap', 'dialogs.main',
+    'pascalprecht.translate', 'flow']);
     
     app.config(function ($routeProvider) {
         $routeProvider
@@ -21,6 +23,11 @@ var app = angular.module('testApp', ['ngResource', 'ngRoute', 'ngMaterial', 'ngA
                   {
                       controller: 'ContractFinanceController',
                       templateUrl: 'pages/contract_finance.html'
+                  })
+             .when('/ContractDocuments',
+                  {
+                      controller: 'ContractDocumentsController',
+                      templateUrl: 'pages/contract_documents.html'
                   })
              .otherwise({ redirectTo: '/ProjectsOrderers' });
     });
