@@ -8,7 +8,7 @@
             this.contract_start_date = this.contract_start_date ? new Date(this.contract_start_date) : null;
             this.contract_end_date = this.contract_end_date ? new Date(this.contract_end_date) : null;
             this.contract_date = this.contract_date ? new Date(this.contract_date) : null;
-            this.length = this.contract_end_date && this.contract_start_date ? this.contract_end_date.getYear() - this.contract_start_date.getYear() : 0;
+            this.length = this.contract_end_date && this.contract_start_date ? this.contract_end_date.getYear() - this.contract_start_date.getYear() + 1 : 0;
             window.currentProject.contract_start_date = this.contract_start_date;
             window.currentProject.contract_end_date = this.contract_end_date;
             if (this.length > 0 && !self.dogovorFinanceStructure) {
