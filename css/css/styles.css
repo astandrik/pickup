@@ -1536,6 +1536,7 @@ body {
   padding-right: 50px;
   border: 2px dashed black;
   border-radius: 10px;
+  background-color: white;
 }
 .nav-tabs {
   border-bottom: none;
@@ -1624,6 +1625,13 @@ body {
   height: 100%;
   position: absolute;
   z-index: 100500;
+}
+.interactive-text:hover {
+  color: #89e0ff;
+  cursor: pointer;
+}
+.interactive-text:hover svg {
+  fill: #89e0ff;
 }
 .title-clickable:hover {
   color: #89e0ff;

@@ -15,10 +15,12 @@
             <md-option value="dogovorPlan">Ежегодные затраты по статьям (План по договору)</md-option>
         </md-select>
         <div class="flex layout-row align-center justify-end">
-            <md-button class="md-icon-button" style="padding-top:5px;">
-                <ng-md-icon icon="check" size="30px" ng-click="toggleFinanceEdit()"></ng-md-icon>
-            </md-button>
-            <h4 style="border-bottom:none; margin-top:0; margin-bottom:0;line-height:37px">СОХРАНИТЬ</h4>
+            <div class="interactive-text flex layout-row align-center" style="max-width: 150px;" ng-click="toggleFinanceEdit()">
+                <md-button class="md-icon-button" style="padding-top:5px;pointer-events:none">
+                    <ng-md-icon icon="check" size="30px" ng-click="toggleFinanceEdit()"></ng-md-icon>
+                </md-button>
+                <h4 style="border-bottom:none; margin-top:0; margin-bottom:0;line-height:37px">СОХРАНИТЬ</h4>
+            </div>
         </div>
 </md-data-table-toolbar>
 
