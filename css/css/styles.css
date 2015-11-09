@@ -1826,6 +1826,12 @@ input {
 .min-width-900 {
   min-width: 919px;
 }
+.min-width-800 {
+  min-width: 800px;
+}
+.min-width-400 {
+  min-width: 400px;
+}
 .min-width-300 {
   min-width: 300px;
 }
@@ -1841,7 +1847,7 @@ span.header {
 }
 .group-element {
   background-color: white;
-  margin: 24px 24px 24px 0;
+  margin: 10px 24px 24px 0;
   border-radius: 5px;
 }
 .group-element label {
@@ -1870,7 +1876,7 @@ span.header {
 @media (min-width: 1300px) {
   .group-element {
     min-width: 300px;
-    height: 330px;
+    height: 340px;
   }
 }
 /*# sourceMappingURL=styles.css.map */
