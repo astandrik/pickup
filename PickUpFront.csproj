@@ -70,6 +70,9 @@
     <Content Include="css\Material-Design-Iconic-Font.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="gruntfile.js" />
+    <Content Include="img\icons\business.svg" />
+    <Content Include="img\icons\user.svg" />
+    <Content Include="img\icons\work.svg" />
     <Content Include="img\icons\favorite.svg" />
     <Content Include="img\icons\menu.svg" />
     <Content Include="img\icons\more_vert.svg" />

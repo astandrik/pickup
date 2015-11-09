@@ -1,10 +1,8 @@
 app.controller('ContractFinanceController', ['$scope', '$http', '$route', '$projects', '$routeParams', function ($scope, $http, $route, $projects, $params) {
-    $scope.isContentShown = true;
-    $scope.has_no_dates = false;
     $scope.finTableTitle = 'dogovorPlan';
     $scope.showProjectToolbar();
     var id = $params.id,
-        projectType = $params.type,
+        projectType = $scope.getProjectsType(),
         isNew = $params.new;
     $scope.setCurrentProject(id, projectType);
     $scope.activateFinanceTab();

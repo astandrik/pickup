@@ -168,26 +168,16 @@
 
     Project.prototype =
     {
-        orderers: $http.get('testData/projectsOrderers.json').success(function (data) { return data }).error(function (err) { return err }),
-        coExecutors: $http.get('testData/projectsCoExecuters.json').success(function (data) { return data }).error(function (err) { return err }),
+        ProjectsOrderers: $http.get('testData/projectsOrderers.json').success(function (data) { return data }).error(function (err) { return err }),
+        ProjectsCoExecutors: $http.get('testData/projectsCoExecuters.json').success(function (data) { return data }).error(function (err) { return err }),
         getById: function (id, type, callBack) {
             if (window.currentProject && window.currentProject.id && window.currentProject.id == id) {
                 callBack(window.currentProject);
             } else {
-                switch (type) {
-                    case 'orderers':
-                        this.orderers.success(function (data) {
-                            window.currentProject = new Project(data.findByParam('DOGOVOR_ID', id));
-                            callBack(window.currentProject);
-                        });
-                        break;
-                    case 'coExecutors':
-                        this.coExecutors.success(function (data) {
-                            window.currentProject = new Project(data.findByParam('DOGOVOR_ID', id));
-                            callBack(window.currentProject);
-                        });
-                        break
-                }
+                this[type].success(function (data) {
+                    window.currentProject = new Project(data.findByParam('DOGOVOR_ID', id));
+                    callBack(window.currentProject);
+                });
             }
         }
     };

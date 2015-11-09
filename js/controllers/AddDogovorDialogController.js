@@ -9,7 +9,7 @@ app.controller('AddDogovorDialogController', ['$scope', '$modalInstance', '$proj
         if (!dogovor.contract_order || !dogovor.contract_type || !dogovor.contract_status) {
             alert('Не все обязательные поля заполнены!');
         } else {
-            location.href = '#/ContractCard?id=123456&type=orderers';
+            location.href = '#/ProjectsOrderers/123456/ContractCard';
             $modalInstance.dismiss('Saved');
         }
     }

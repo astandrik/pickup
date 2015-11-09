@@ -9,9 +9,7 @@
     min-width:442px;
 }
 
-md-checkbox {
-    margin:0!important;
-}
+
 
 ng-md-icon {
     &.hover {
@@ -22,11 +20,36 @@ ng-md-icon {
     cursor:default;
 }
 
+md-input-container.md-icon-float>md-icon+input {
+        margin-left: 24px;
+}
+
+input[type=date] {
+    width:  130px;   
+}
+
+md-input-container.iconed {
+    md-icon {
+        width:16px;
+        height:16px;
+        top:29px;
+        fill: #666666;
+        &:hover {
+            cursor:pointer;
+             fill:#89e0ff;
+        }
+    }
+}
+
+md-input-container {
+    margin-top: -8px!important;
+}
 md-input-container.iconed.md-input-focused label,
  md-input-container.iconed.md-input-has-value label:not(.md-no-float) {
  
     transform: translate3d(-18px,6px,0) scale(.75)!important;
     -webkit-transform: translate3d(-18px,6px,0) scale(.75)!important;
+    
 }
 
 
@@ -49,6 +72,13 @@ input {
     min-width:919px;
 }
     
+.min-width-300 {
+    min-width:300px;
+}
+
+.min-width-600 {
+    min-width:600px;
+}
 
 span.header {
     margin-left:16px;
@@ -56,31 +86,46 @@ span.header {
 }
 
 .padded-area {
-    padding: 10px 16px 10px 16px;
+    padding: 10px 16px 10px 16px!important;
 }
-    .group-element
-      {
-          background-color: white;
-          height:330px;          
-          margin: 24px 24px 24px 0;
-          flex:3;
-          &.wide{
-              flex:6;
-          }
 
-          &.no-right {
-              margin-right:0px;
-          }
+.group-element {
+    background-color: white;          
+    margin: 24px 24px 24px 0;
+    border-radius: 5px;
+    label {
+        white-space:nowrap;
+    }
+    .external_lable{
+        font-size:12px;
+        color:#3f51b5;
+        margin-top:10px;
+    }
+    md-checkbox {
+        top:12px;
+    }
+    md-input-container.md-icon-float>label  {
+        margin-left:18px;
+    }
+}
 
-          .external_lable{
-              font-size:12px;
-              color:#3f51b5;
-              margin-top:10px;
-          }
+.row-content {
+    margin:0!important;
+}
 
-          md-input-container{
-              font-size:16px;
-              margin-right:24px;
-          }
-      }
+@media (min-width: 500px) {
+    .group-element {
+        min-width: 300px;
+        height:auto;
+    }
+}
 
+@media (min-width: 1300px) {
+    .group-element {
+        min-width: 300px;
+        height:330px;
+    }
+}
+
+
+   

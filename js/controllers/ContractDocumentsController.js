@@ -1,7 +1,7 @@
 app.controller('ContractDocumentsController', ['$scope', '$http', '$route', '$projects', '$routeParams', function ($scope, $http, $route, $projects, $params) {
     $scope.showProjectToolbar();
     var id = $params.id,
-        projectType = $params.type,
+        projectType = $scope.getProjectsType(),
         isNew = $params.new;
     $scope.setCurrentProject(id, projectType);
     $scope.activateDocumentsTab();

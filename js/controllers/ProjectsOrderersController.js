@@ -33,16 +33,14 @@ app.controller('ProjectsOrderersController', ['$scope', '$http', '$filter', '$pr
     }
     
     $scope.setDisplayedDogovorsType('ProjectsOrderers');
-
     $scope.onOrderChange = function (field) {
         var ord = field.split('')[0] == '-' ? 'desc' : 'asc';
         if (field.split('')[0] == '-') field = field.slice(1);
         $scope.order = ord;
         $scope.sort_order = field;
-        getProjects($projects.proto, $scope.projectsWrapper, $scope.projectType);
+        getProjects($projects.proto, $scope.projectsWrapper, $scope.dogovorType);
     }
-    $scope.projectType = 'orderers';
     $scope.projectsWrapper = $scope;
-    getProjects($projects.proto, $scope.projectsWrapper, $scope.projectType);
+    getProjects($projects.proto, $scope.projectsWrapper, $scope.dogovorType);
     $scope.showGridToolbar();     
 }]);

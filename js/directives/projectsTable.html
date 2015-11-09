@@ -30,7 +30,7 @@
             <tbody>
                 <tr class="flex layout-row"  ng-repeat="row in listing.projects | limitTo: listing.query.limit: (listing.query.page - 1) * listing.query.limit">
                     <td ng-repeat="property in row" class="flex layout-row align-center" style="flex: {{property.grow}}" name="{{property.name}}"><span>{{ property.value}}</span></td>
-                    <td class="flex layout-row align-center"><ng-md-icon icon="edit" ng-click='listing.goToCard(row.id, listing.projectType)' size="30px"></ng-md-icon></td>
+                    <td class="flex layout-row align-center"><ng-md-icon icon="edit" ng-click='listing.navigateInProject(row.id, "ContractCard")' size="30px"></ng-md-icon></td>
                     <td class="flex layout-row align-center"><ng-md-icon icon="open_in_new" size="30px"></ng-md-icon></td>
                 </tr>
             </tbody>

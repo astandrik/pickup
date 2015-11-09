@@ -14,20 +14,38 @@ var app = angular.module('testApp', ['ngResource', 'ngRoute', 'ngMaterial',
                       controller: 'ProjectsCoExecutorsController',
                       templateUrl: 'pages/projects_listing.html'
                   })
-             .when('/ContractCard',
+
+            .when('/ProjectsCoExecutors/:id/ContractCard',
                   {
                       controller: 'ContractCardController',
                       templateUrl: 'pages/contract_card.html'
                   })
-             .when('/ContractFinance',
+            .when('/ProjectsOrderers/:id/ContractCard',
+                  {
+                      controller: 'ContractCardController',
+                      templateUrl: 'pages/contract_card.html'
+                  })
+
+            .when('/ProjectsCoExecutors/:id/ContractDocuments',
+                  {
+                      controller: 'ContractDocumentsController',
+                      templateUrl: 'pages/contract_documents.html'
+                  })
+            .when('/ProjectsOrderers/:id/ContractDocuments',
+                  {
+                      controller: 'ContractDocumentsController',
+                      templateUrl: 'pages/contract_documents.html'
+                  })
+
+            .when('/ProjectsCoExecutors/:id/ContractFinance',
                   {
                       controller: 'ContractFinanceController',
                       templateUrl: 'pages/contract_finance.html'
                   })
-             .when('/ContractDocuments',
+            .when('/ProjectsOrderers/:id/ContractFinance',
                   {
-                      controller: 'ContractDocumentsController',
-                      templateUrl: 'pages/contract_documents.html'
+                      controller: 'ContractFinanceController',
+                      templateUrl: 'pages/contract_finance.html'
                   })
              .otherwise({ redirectTo: '/ProjectsOrderers' });
     });

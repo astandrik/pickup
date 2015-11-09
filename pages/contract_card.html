@@ -1,262 +1,302 @@
 <div id="contract_card_page_content" class='page-content'>
     <div class='flex layout-row justify-between flex-wrap'>
-        <div class="flex layout-column flex-3 min-width-450">
-            <div class='group-element'>
-                <h4><span class="header">Стороны договора</span></h4>
-                <div class="padded-area">
-                    <div class="flex layout-column">
-                        <div class='flex layout-row align-center'>
-                            <md-input-container flex>
-                                <label>Тип договора</label>
-                                <input ng-model="contract_type">
+        <div class="flex layout-column flex-3 min-width-300">
 
-                            </md-input-container>
-                            <md-input-container flex>
-                                <label>Статус</label>
-                                <input ng-model="contract_status">
-                            </md-input-container>
+            <div class='group-element flex layout-column'>
+                    <h4><span class="header">Стороны договора</span></h4>
+                    <div class="padded-area">
+                        <div class='row'>
+                            <div class="col-md-12 col-sm-12 col-lg-6 col-xs-6">
+                                <md-input-container>
+                                    <label>Тип договора</label>
+                                    <input ng-model="contract_type">
+                                </md-input-container>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-lg-6 col-xs-6">
+                                <md-input-container>
+                                    <label>Статус</label>
+                                    <input ng-model="contract_status">
+                                </md-input-container>
+                            </div>
                         </div>
-
-                        <div class='flex layout-row align-center'>
-                            <ng-md-icon icon="work" size="16px"></ng-md-icon>
-                            <md-input-container class="iconed" flex>
-                                <label>Заказчик</label>
-                                <input ng-model="contract_order">
-                            </md-input-container>
+                        <div class='row'>
+                            <div class='col-md-12 col-xs-12 '>
+                                <md-input-container class="md-icon-float md-block iconed">
+                                    <label>Заказчик</label>
+                                    <md-icon md-svg-src="img/icons/work.svg" class="name"></md-icon>
+                                    <input ng-model="contract_order">
+                                </md-input-container>
+                            </div>
                         </div>
-
-                        <div class='flex layout-row align-center'>
-                            <ng-md-icon icon="work" class="iconed" size="16px"></ng-md-icon>
-                            <md-input-container class="iconed" flex>
-                                <label>Исполнитель</label>
-                                <input ng-model="contract_executor">
-                            </md-input-container>
+                        <div class='row'>
+                            <div class='col-md-12 col-xs-12'>
+                                <md-input-container class="md-icon-float md-block iconed">
+                                    <label>Исполнитель</label>
+                                    <md-icon md-svg-src="img/icons/work.svg" class="name"></md-icon>
+                                    <input ng-model="contract_executor">
+                                </md-input-container>
+                            </div>
                         </div>
                     </div>
-                </div>
             </div>
-            <div class='group-element'>
-                <div class="flex layout-column">
+            <div class='group-element flex layout-column'>
                     <h4><span class="header">Порядок расчета</span></h4>
                     <div class="padded-area">
-                        <div flex="20" class='flex layout-row'>
-                            <md-input-container flex>
-                                <label>Аванс(%)</label>
-                                <input ng-model="contract_avans_percent">
-                            </md-input-container>
-                            <md-input-container flex>
-                                <label>от суммы договора</label>
-                                <input ng-model="contract_avans_info">
-                            </md-input-container>
+                        <div class="row">
+                            <div class='col-md-6 col-xs-12'>
+                                <md-input-container>
+                                    <label>Аванс(%)</label>
+                                    <input ng-model="contract_avans_percent">
+                                </md-input-container>
+                            </div>
+                            <div class='col-md-6 col-xs-12'>
+                                <md-input-container>
+                                    <label>от суммы договора</label>
+                                    <input ng-model="contract_avans_info">
+                                </md-input-container>
+                            </div>
                         </div>
-                        <div flex="80" class='flex layout-row'>
-                            <md-input-container flex>
-                                <label>Примечание</label>
-                                <textarea ng-model="contract_note" />
-                            </md-input-container>
+                        <div class="row">
+                            <div class='col-xs-12'>
+                                <md-input-container>
+                                    <label>Примечание</label>
+                                    <textarea ng-model="contract_note" />
+                                </md-input-container>
+                            </div>
                         </div>
                     </div>
-                </div>
             </div>
         </div>
-        
-        <div class="flex layout-column flex-6 min-width-900">
-            <div class="flex layout-row">
-                <div class='group-element'>
-                    <div class="flex layout-column">
+
+        <div class="flex layout-column flex-6 min-width-600">
+            <div class="flex layout-row flex-wrap">
+                <div class='group-element flex layout-column' >
                         <h4><span class="header">Цена договора</span></h4>
                         <div class="padded-area">
-                            <div class='flex layout-row'>
-                                <md-input-container flex>
-                                    <label>Сумма (руб.)</label>
-                                    <input ng-model="contract_sum_rub">
-                                </md-input-container>
-                                <md-input-container flex>
-                                    <label>Модель цены</label>
-                                    <input ng-model="contract_sum_model">
-                                </md-input-container>
+                            <div class='row'>
+                                <div class='col-md-6 col-xs-12'>
+                                    <md-input-container>
+                                        <label>Сумма (руб.)</label>
+                                        <input ng-model="contract_sum_rub">
+                                    </md-input-container>
+                                </div>
+                                <div class='col-md-6 col-xs-12'>
+                                    <md-input-container>
+                                        <label>Модель цены</label>
+                                        <input ng-model="contract_sum_model">
+                                    </md-input-container>
+                                </div>
                             </div>
-                            <div class='flex layout-row'>
-                                <md-input-container flex>
-                                    <label>Сумма</label>
-                                    <input ng-model="contract_sum">
-                                </md-input-container>
-                                <md-input-container flex>
-                                    <label>Валюта расчетов</label>
-                                    <input ng-model="contract_currency">
-                                </md-input-container>
+                            <div class='row'>
+                                <div class='col-md-6 col-xs-12'>
+                                    <md-input-container>
+                                        <label>Сумма</label>
+                                        <input ng-model="contract_sum">
+                                    </md-input-container>
+                                </div>
+                                <div class='col-md-6 col-xs-12'>
+                                    <md-input-container>
+                                        <label>Валюта расчетов</label>
+                                        <input ng-model="contract_currency">
+                                    </md-input-container>
+                                </div>
                             </div>
-                            <div class='flex layout-row'>
-                                <md-input-container flex>
-                                    <label>НДС(%)</label>
-                                    <input ng-model="contract_nds">
-                                </md-input-container>
-                                <md-input-container flex>
-                                    <label>Схема налогов</label>
-                                    <input ng-model="contract_tax_scheme">
-                                </md-input-container>
+                            <div class='row'>
+                                <div class='col-md-6 col-xs-12'>
+                                    <md-input-container>
+                                        <label>НДС(%)</label>
+                                        <input ng-model="contract_nds">
+                                    </md-input-container>
+                                </div>
+                                <div class='col-md-6 col-xs-12'>
+                                    <md-input-container>
+                                        <label>Схема налогов</label>
+                                        <input ng-model="contract_tax_scheme">
+                                    </md-input-container>
+                                </div>
                             </div>
                         </div>
-                    </div>
                 </div>
-                <div class='group-element'>
-                    <div class="flex layout-column">
+                <div class='group-element flex layout-column' style="height:auto;">
                         <h4><span class="header">Предмет договора</span></h4>
                         <div class="padded-area">
-                            <div flex="20" class='flex layout-row'>
-                                <md-input-container flex ng-class="{'show' : !has_no_dates, 'hidden' : has_no_dates}">
-                                    <label>Дата начала</label>
-                                    <input type="date" ng-change="reCalculateProject()" ng-model="contract_start_date">
-                                </md-input-container>
-                                <md-input-container flex ng-class="{'show' : !has_no_dates, 'hidden' : has_no_dates}">
-                                    <label>Дата окончания</label>
-                                    <input type="date" ng-change="reCalculateProject()" ng-model="contract_end_date">
-                                </md-input-container>
-                                <md-checkbox aria-label="Бессрочный" ng-model="has_no_dates">
-                                </md-checkbox>
-                                <span style="line-height:90px">Бессрочный</span>
+                            <div class="row">
+                                <div class="col-xs-4 col-sm-12 col-md-4" ng-class="{'show' : !has_no_dates, 'hidden' : has_no_dates}">
+                                    <md-input-container ng-class="{'show' : !has_no_dates, 'hidden' : has_no_dates}">
+                                        <label>Дата начала</label>
+                                        <input type="date" ng-change="reCalculateProject()" ng-model="contract_start_date">
+                                    </md-input-container>
+                                </div>
+                                <div class="col-xs-4 col-sm-6 col-md-4" ng-class="{'show' : !has_no_dates, 'hidden' : has_no_dates}">
+                                    <md-input-container ng-class="{'show' : !has_no_dates, 'hidden' : has_no_dates}">
+                                        <label>Дата окончания</label>
+                                        <input type="date" ng-change="reCalculateProject()" ng-model="contract_end_date">
+                                    </md-input-container>
+                                </div>
+                                <div class="col-xs-4  col-sm-6 col-md-4">
+                                    <md-checkbox aria-label="Бессрочный" ng-model="has_no_dates">
+                                        Бессрочный
+                                    </md-checkbox>
+                                </div>
                             </div>
-                            <div flex="60" class='flex layout-row'>
-                                <md-input-container flex>
-                                    <label>Название</label>
-                                    <textarea ng-model="contract_name"></textarea>
-                                </md-input-container>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <md-input-container>
+                                        <label>Название</label>
+                                        <textarea rows="3" style="resize:vertical" class="form-control" ng-model="contract_name"></textarea>
+                                    </md-input-container>
+                                </div>
                             </div>
                         </div>
-                    </div>
                 </div>
             </div>
-            <div class='group-element wide'>
+            <div class='group-element wide' flex>
                 <div class="flex layout-column">
                     <h4><span class="header">Ответственные со стороны исполнителя</span></h4>
                     <div class="padded-area">
-                        <div class='flex layout-row align-center'>
-                            <div class="flex layout-column">
-                                <div class="flex layout-row align-center">
-                                    <ng-md-icon icon="person" size="16px"></ng-md-icon>
-                                    <md-input-container class="iconed" flex>
-                                        <label>Руководитель</label>
-                                        <input ng-model="contract_main_designer">
-                                    </md-input-container>
-                                </div>
-                                <div class="flex layout-row align-center">
-                                    <ng-md-icon icon="person" size="16px"></ng-md-icon>
-                                    <md-input-container class="iconed" flex>
-                                        <label>Зместитель руководителя</label>
-                                        <input ng-model="contract_deputy">
-                                    </md-input-container>
-                                </div>
-                                <div class="flex layout-row align-center">
-                                    <ng-md-icon icon="person" size="16px"></ng-md-icon>
-                                    <md-input-container class="iconed" flex>
-                                        <label>Подписант</label>
-                                        <input flex ng-model="contract_signer">
-                                    </md-input-container>
-                                </div>
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <md-input-container class="md-icon-float md-block iconed">
+                                    <label>Проект. офис</label>
+                                    <md-icon md-svg-src="img/icons/business.svg" class="name"></md-icon>
+                                    <input ng-model="contract_project_office">
+                                </md-input-container>
                             </div>
-                            <div class="flex layout-column">
-                                <div class="flex layout-row align-center">
-                                    <ng-md-icon icon="business" size="16px"></ng-md-icon>
-                                    <md-input-container class="iconed" flex>
-                                        <label>Проект. офис</label>
-                                        <input ng-model="contract_project_office">
-                                    </md-input-container>
-                                    <ng-md-icon icon="business" size="16px"></ng-md-icon>
-                                    <md-input-container class="iconed" flex>
-                                        <label>Головной НТЦ</label>
-                                        <input ng-model="contract_ntc">
-                                    </md-input-container>
-                                    <ng-md-icon icon="business" size="16px"></ng-md-icon>
-                                    <md-input-container class="iconed" flex>
-                                        <label>Подразделение</label>
-                                        <input ng-model="contract_department">
-                                    </md-input-container>
-                                </div>
-                                <div class="flex layout-row align-center">
-                                    <ng-md-icon icon="person" size="16px"></ng-md-icon>
-                                    <md-input-container class="iconed" flex>
-                                        <label>Куратор от ГПО</label>
-                                        <input ng-model="contract_curator">
-                                    </md-input-container>
-                                </div>
-                                <div class="flex layout-row align-center">
-                                    <ng-md-icon icon="person" class="iconed" size="16px" ></ng-md-icon>
-                                    <md-input-container class="iconed" flex>
-                                        <label>Куратор договора</label>
-                                        <input ng-model="contract_dogovor_curator">
-                                    </md-input-container>
-                                </div>
+                            <div class="col-xs-4">
+                                <md-input-container class="md-icon-float md-block iconed">
+                                    <label>Головной НТЦ</label>
+                                    <md-icon md-svg-src="img/icons/business.svg" class="name"></md-icon>
+                                    <input ng-model="contract_ntc">
+                                </md-input-container>
+                            </div>
+                            <div class="col-xs-4">
+                                <md-input-container class="md-icon-float md-block iconed">
+                                    <label>Подразделение</label>
+                                    <md-icon md-svg-src="img/icons/business.svg" class="name"></md-icon>
+                                    <input ng-model="contract_department">
+                                </md-input-container>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 col-lg-6 col-xs-12">
+                                <md-input-container class="md-icon-float md-block iconed">
+                                    <label>Руководитель</label>
+                                    <md-icon md-svg-src="img/icons/user.svg" class="name"></md-icon>
+                                    <input ng-model="contract_main_designer">
+                                </md-input-container>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-xs-12">
+                                <md-input-container class="md-icon-float md-block iconed">
+                                    <label>Зместитель руководителя</label>
+                                    <md-icon md-svg-src="img/icons/user.svg" class="name"></md-icon>
+                                    <input ng-model="contract_deputy">
+                                </md-input-container>
+                            </div>
+                            <div class="col-md-6 col-xs-12">
+                                <md-input-container class="md-icon-float md-block iconed">
+                                    <label>Куратор от ГПО</label>
+                                    <md-icon md-svg-src="img/icons/user.svg" class="name"></md-icon>
+                                    <input ng-model="contract_curator">
+                                </md-input-container>
+                            </div> 
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-xs-12">
+                                <md-input-container class="md-icon-float md-block iconed">
+                                    <label>Подписант</label>
+                                    <md-icon md-svg-src="img/icons/user.svg" class="name"></md-icon>
+                                    <input flex ng-model="contract_signer">
+                                </md-input-container>
+                            </div>
+                            <div class="col-md-6 col-xs-12">
+                                <md-input-container class="md-icon-float md-block iconed">
+                                    <label>Куратор договора</label>
+                                    <md-icon md-svg-src="img/icons/user.svg" class="name"></md-icon>
+                                    <input ng-model="contract_dogovor_curator">
+                                </md-input-container>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        
-         <div class="flex layout-column flex-3 min-width-450">
-             <div class='group-element'>
-                 <div class="flex layout-column">
-                     <h4><span class="header">Регистрационные данные</span></h4>
-                     <div class="padded-area">
-                         <div class='flex layout-row'>
-                             <md-input-container flex>
-                                 <label>Шифр</label>
-                                 <input ng-model="contract_code">
-                             </md-input-container>
-                         </div>
-                         <div class='flex layout-row'>
-                             <md-input-container flex>
-                                 <label>Номер договора</label>
-                                 <input ng-model="contract_number">
-                             </md-input-container>
-                             <md-input-container flex>
-                                 <label>Дата подписания</label>
-                                 <input type="date" ng-model="contract_date">
-                             </md-input-container>
-                         </div>
-                         <div class='flex layout-row'>
-                             <md-input-container flex>
-                                 <label>Регистрационный номер</label>
-                                 <input ng-model="contract_reg_number">
-                             </md-input-container>
-                             <md-input-container flex>
-                                 <label>Дата регистрации</label>
-                                 <input type="date" ng-model="contract_reg_date">
-                             </md-input-container>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-             <div class='group-element'>
-                 <div class="flex layout-column">
-                     <h4><span class="header">Ответственные со стороны заказчика</span></h4>
-                     <div class="padded-area">
-                         <div class='flex layout-row align-center'>
-                             <ng-md-icon icon="person" size="16px"></ng-md-icon>
-                             <md-input-container class="iconed" flex="50">
-                                 <label>Подписант</label>
-                                 <input ng-model="contract_executor_signer">
-                             </md-input-container>
-                         </div>
-                         <div class='flex layout-row align-center'>
-                             <ng-md-icon icon="person" size="16px"></ng-md-icon>
-                             <md-input-container class="iconed" flex>
-                                 <label>Должность подписанта</label>
-                                 <input ng-model="contract_executor_signer_position">
-                             </md-input-container>
-                         </div>
-                         <div class='flex layout-row align-center'>
-                             <ng-md-icon icon="person" size="16px"></ng-md-icon>
-                             <md-input-container class="iconed" flex>
-                                 <label>Куратор договора</label>
-                                 <input ng-model="contract_executor_curator">
-                             </md-input-container>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-         </div>
 
+        <div class="flex layout-column flex-3 min-width-300">
+            <div class='group-element'>
+                <div class="flex layout-column">
+                    <h4><span class="header">Регистрационные данные</span></h4>
+                    <div class="padded-area">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <md-input-container>
+                                    <label>Шифр</label>
+                                    <input ng-model="contract_code">
+                                </md-input-container>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-xs-12">
+                                <md-input-container>
+                                    <label>Номер договора</label>
+                                    <input ng-model="contract_number">
+                                </md-input-container>
+                            </div>
+                            <div class="col-md-6 col-xs-12">
+                                <md-input-container>
+                                    <label>Дата подписания</label>
+                                    <input type="date" ng-model="contract_date">
+                                </md-input-container>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-xs-12">
+                                <md-input-container>
+                                    <label>Регистрационный номер</label>
+                                    <input ng-model="contract_reg_number">
+                                </md-input-container>
+                            </div>
+                            <div class="col-md-6 col-xs-12">
+                                <md-input-container>
+                                    <label>Дата регистрации</label>
+                                    <input type="date" ng-model="contract_reg_date">
+                                </md-input-container>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class='group-element'>
+                <div class="flex layout-column">
+                    <h4><span class="header">Ответственные со стороны заказчика</span></h4>
+                    <div class="padded-area">
+                        <div class="col-xs-12">
+                            <md-input-container class="md-icon-float md-block iconed">
+                                <label>Подписант</label>
+                                <md-icon md-svg-src="img/icons/user.svg" class="name"></md-icon>
+                                <input ng-model="contract_executor_signer">
+                            </md-input-container>
+                        </div>
+                        <div class="col-xs-12">
+                            <md-input-container class="md-icon-float md-block iconed">
+                                <label>Должность подписанта</label>
+                                <md-icon md-svg-src="img/icons/user.svg" class="name"></md-icon>
+                                <input ng-model="contract_executor_signer_position">
+                            </md-input-container>
+                        </div>
+                        <div class="col-xs-12">
+                            <md-input-container class="md-icon-float md-block iconed">
+                                <label>Куратор договора</label>
+                                <md-icon md-svg-src="img/icons/user.svg" class="name"></md-icon>
+                                <input ng-model="contract_executor_curator">
+                            </md-input-container>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+
+    </div>
 </div>
 

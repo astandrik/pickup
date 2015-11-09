@@ -1,4 +1,4 @@
-﻿app.controller('LayoutController', ['$scope','dialogs', function ($scope,dialogs) {
+﻿app.controller('LayoutController', ['$scope', 'dialogs', '$route', function ($scope, dialogs, $route) {
     $scope.isSideBarOpen = false;
     $scope.isFinanceActive = false;
     $scope.isCardActive = false;
@@ -25,31 +25,21 @@
     }
 
     $scope.onProjectTypeChange = function () {
-        switch ($scope.dogovorType) {
-            case 'ProjectsOrderers':
-                location.href = '#/ProjectsOrderers';
-                break;
-            case 'ProjectsCoExecutors':
-                location.href = '#/ProjectsCoExecutors';
-                break;
-            default:
-                switch ($scope.currentProject.type) {
-                    case 'orderers':
-                        location.href = '#/ProjectsOrderers';
-                        break;
-                    case 'coExecutors':
-                        location.href = '#/ProjectsCoExecutors';
-                        break;
-                    default:
-                        location.href = '#/ProjectsOrderers';
-                        break;
-                }
-        }
+        var projectType = $scope.dogovorType || $scope.currentProject.type;
+        location.href = '#/' + projectType;
     }
 
     $scope.showGridToolbar = function () {
         $scope.isGridShown = true;
         $scope.isProjectShown = false;
+    }
+
+    $scope.getProjectsType = function () {
+        if (!$scope.dogovorType) {
+            var pathDogovor = $route.current.$$route.originalPath.split('/')[1];
+            $scope.dogovorType = pathDogovor;
+        }
+        return $scope.dogovorType;
     }
 
     $scope.showProjectToolbar = function () {
@@ -86,36 +76,20 @@
         $scope.isDocumentsActive = true;
     }
 
-    $scope.goToCard = function (id, type) {
-        if (id == undefined || type == undefined) {
-            location.href = "#/ContractCard?id=" + $scope.currentProject.id + "&type=" + $scope.currentProject.type;
-        } else {
-            location.href = "#/ContractCard?id=" + id + "&type=" + type;
-        }
-    }
-
-    $scope.goToFinance = function (id, type) {
-        if (window.currentProject && window.currentProject) {
-            if (!window.currentProject.contract_start_date  || !window.currentProject.contract_end_date) {
+    $scope.navigateInProject = function (id, page) {
+        if (page == 'ContractFinance') {
+            if (!window.currentProject.contract_start_date || !window.currentProject.contract_end_date) {
                 alert('Введите даты начала и окончания!');
                 return;
             }
         }
-        if (id == undefined || type == undefined) {
-            location.href = "#/ContractFinance?id=" + $scope.currentProject.id + "&type=" + $scope.currentProject.type;
+        if (!id) {
+            location.href = '#/' + $scope.dogovorType + '/' + $scope.currentProject.id + '/' + page;
         } else {
-            location.href = "#/ContractFinance?id=" + id + "&type=" + type;
+            location.href = '#/' + $scope.dogovorType + '/' + id + '/' + page;
         }
     }
 
-
-    $scope.goToDocuments = function (id, type) {
-        if (id == undefined || type == undefined) {
-            location.href = "#/ContractDocuments?id=" + $scope.currentProject.id + "&type=" + $scope.currentProject.type;
-        } else {
-            location.href = "#/ContractDocuments?id=" + id + "&type=" + type;
-        }
-    }
 
     $scope.toggleFinanceEdit = function () {
         $scope.isFinanceEditing = !$scope.isFinanceEditing;

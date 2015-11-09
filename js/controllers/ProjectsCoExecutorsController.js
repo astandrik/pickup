@@ -38,10 +38,9 @@ app.controller('ProjectsCoExecutorsController', ['$scope', '$http', '$filter', '
         if (field.split('')[0] == '-') field = field.slice(1);
         $scope.order = ord;
         $scope.sort_order = field;
-        getProjects($projects.proto, $scope.projectsWrapper, $scope.projectType);
+        getProjects($projects.proto, $scope.projectsWrapper, $scope.dogovorType);
     }
-    $scope.projectType = 'coExecutors';
     $scope.projectsWrapper = $scope;
-    getProjects($projects.proto, $scope.projectsWrapper, $scope.projectType);
+    getProjects($projects.proto, $scope.projectsWrapper, $scope.dogovorType);
     $scope.showGridToolbar();
 }]);
