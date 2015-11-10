@@ -6,45 +6,45 @@ var app = angular.module('testApp', ['ngResource', 'ngRoute', 'ngMaterial',
         $routeProvider
             .when('/ProjectsOrderers',
                   {
-                      controller: 'ProjectsOrderersController',
+                      controller: 'ProjectsGridController',
                       templateUrl: 'pages/projects_listing.html'
                   })
             .when('/ProjectsCoExecutors',
                   {
-                      controller: 'ProjectsCoExecutorsController',
+                      controller: 'ProjectsGridController',
                       templateUrl: 'pages/projects_listing.html'
                   })
 
-            .when('/ProjectsCoExecutors/:id/ContractCard',
+            .when('/ProjectsCoExecutors/:id/card',
                   {
-                      controller: 'ContractCardController',
+                      controller: 'ProjectController',
                       templateUrl: 'pages/contract_card.html'
                   })
-            .when('/ProjectsOrderers/:id/ContractCard',
+            .when('/ProjectsOrderers/:id/card',
                   {
-                      controller: 'ContractCardController',
+                      controller: 'ProjectController',
                       templateUrl: 'pages/contract_card.html'
                   })
 
-            .when('/ProjectsCoExecutors/:id/ContractDocuments',
+            .when('/ProjectsCoExecutors/:id/documents',
                   {
-                      controller: 'ContractDocumentsController',
+                      controller: 'ProjectController',
                       templateUrl: 'pages/contract_documents.html'
                   })
-            .when('/ProjectsOrderers/:id/ContractDocuments',
+            .when('/ProjectsOrderers/:id/documents',
                   {
-                      controller: 'ContractDocumentsController',
+                      controller: 'ProjectController',
                       templateUrl: 'pages/contract_documents.html'
                   })
 
-            .when('/ProjectsCoExecutors/:id/ContractFinance',
+            .when('/ProjectsCoExecutors/:id/finance',
                   {
-                      controller: 'ContractFinanceController',
+                      controller: 'ProjectController',
                       templateUrl: 'pages/contract_finance.html'
                   })
-            .when('/ProjectsOrderers/:id/ContractFinance',
+            .when('/ProjectsOrderers/:id/finance',
                   {
-                      controller: 'ContractFinanceController',
+                      controller: 'ProjectController',
                       templateUrl: 'pages/contract_finance.html'
                   })
              .otherwise({ redirectTo: '/ProjectsOrderers' });

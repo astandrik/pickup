@@ -79,11 +79,8 @@
     <Content Include="img\icons\project.svg" />
     <Content Include="index.html" />
     <Content Include="js\controllers\AddDogovorDialogController.js" />
-    <Content Include="js\controllers\ContractDocumentsController.js" />
-    <Content Include="js\controllers\ContractFinanceController.js" />
-    <Content Include="js\controllers\ProjectsCoExecutorsController.js" />
-    <Content Include="js\controllers\ProjectsOrderersController.js" />
-    <Content Include="js\controllers\ContractCardController.js" />
+    <Content Include="js\controllers\ProjectController.js" />
+    <Content Include="js\controllers\ProjectsGridController.js" />
     <Content Include="js\controllers\LayoutController.js" />
     <Content Include="js\dialogs\addProject.html" />
     <Content Include="js\directives\mask.html" />
@@ -121,12 +118,15 @@
     <Content Include="js\libs\ng-flow-standalone.min.js" />
     <Content Include="js\libs\ui-bootstrap-tpls-0.11.0.min.js" />
     <Content Include="js\libs\underscore-min.js" />
+    <Content Include="js\services\catalogs.js" />
     <Content Include="js\services\projects.js" />
     <Content Include="pages\contract_card.html" />
     <Content Include="pages\contract_documents.html" />
     <Content Include="pages\contract_finance.html" />
     <Content Include="pages\projects_listing.html" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -153,6 +153,7 @@
     <Content Include="css\Material-Design-Iconic-Font2.woff" />
     <Content Include="css\Material-Design-Iconic-Font.ttf" />
     <Content Include="testData\projectsFinancies.json" />
+    <Content Include="testData\users.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,4 +1,4 @@
-app.controller('ProjectsOrderersController', ['$scope', '$http', '$filter', '$projects', function ($scope, $http, $filter, $projects) {
+app.controller('ProjectsGridController', ['$scope', '$http', '$filter', '$projects', function ($scope, $http, $filter, $projects) {
     $scope.projectsWrapper = {};
     $scope.query = {
         filter: '',
@@ -7,14 +7,32 @@ app.controller('ProjectsOrderersController', ['$scope', '$http', '$filter', '$pr
         page: 1
     };   
     $scope.total = 0;
-    $scope.headers = [
-{ field: "DOGOVOR_CODE", name: "Шифр", width: 9, type: 'string'  },
+    var projType = $scope.getProjectType();
+
+    $scope.headers = [];
+    switch (projType) {
+        case 'ProjectsOrderers':
+            $scope.headers = [
+{ field: "DOGOVOR_CODE", name: "Шифр", width: 9, type: 'string' },
 { field: "DOGOVOR_SUM", name: "Цена(руб.)", width: 6, type: 'number' },
 { field: "DOGOVOR_ORDER_NAME", name: "Заказчик", width: 6, type: 'string' },
 { field: "DOGOVOR_STATUS", name: "Статус", width: 6, type: 'string' },
 { field: "DOGOVOR_NUMBER_AND_DATE", name: "Номер и дата договора", width: 6, type: 'string' },
 { field: "DOGOVOR_PERIOD_START", name: "Начало", width: 6, type: 'date' },
 { field: "DOGOVOR_PERIOD_END", name: "Окончание", width: 6, type: 'date' }];
+            break;
+        case 'ProjectsCoExecutors':
+            $scope.headers = [
+{ field: "DOGOVOR_EXECUTOR_NAME", name: "Исполнитель", width: 6, type: 'string' },
+{ field: "DOGOVOR_NUMBER_AND_DATE", name: "Номер и дата договора", width: 6, type: 'string' },
+{ field: "DOGOVOR_NAME", name: "Название договора", width: 9, type: 'string' },
+{ field: "DOGOVOR_SUM", name: "Цена (руб.)", width: 6, type: 'number' },
+{ field: "DOGOVOR_STATUS", name: "Статус", width: 6, type: 'string' },
+{ field: "DOGOVOR_PERIOD_START", name: "Начало", width: 6, type: 'date' },
+{ field: "DOGOVOR_PERIOD_END", name: "Окончание", width: 6, type: 'date' }];
+            break;
+    }
+  
 
     $scope.isContentShown = false;
     $scope.deleteRowCallback = function (rows) {
@@ -32,7 +50,7 @@ app.controller('ProjectsOrderersController', ['$scope', '$http', '$filter', '$pr
         $scope.selected = [];
     }
     
-    $scope.setDisplayedDogovorsType('ProjectsOrderers');
+    $scope.setDisplayedDogovorsType(projType);
     $scope.onOrderChange = function (field) {
         var ord = field.split('')[0] == '-' ? 'desc' : 'asc';
         if (field.split('')[0] == '-') field = field.slice(1);

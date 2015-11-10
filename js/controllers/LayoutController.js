@@ -34,7 +34,7 @@
         $scope.isProjectShown = false;
     }
 
-    $scope.getProjectsType = function () {
+    $scope.getProjectType = function () {
         if (!$scope.dogovorType) {
             var pathDogovor = $route.current.$$route.originalPath.split('/')[1];
             $scope.dogovorType = pathDogovor;
@@ -77,16 +77,16 @@
     }
 
     $scope.navigateInProject = function (id, page) {
-        if (page == 'ContractFinance') {
+        if (page == 'finance') {
             if (!window.currentProject.contract_start_date || !window.currentProject.contract_end_date) {
                 alert('Введите даты начала и окончания!');
                 return;
             }
         }
         if (!id) {
-            location.href = '#/' + $scope.dogovorType + '/' + $scope.currentProject.id + '/' + page;
+            location.href = '#/' + $scope.dogovorType + '/' + $scope.currentProject.id + '/' + page + '/' +'?form=' + page;
         } else {
-            location.href = '#/' + $scope.dogovorType + '/' + id + '/' + page;
+            location.href = '#/' + $scope.dogovorType + '/' + id + '/' + page + '/' + '?form=' + page;
         }
     }
 

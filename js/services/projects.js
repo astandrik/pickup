@@ -126,7 +126,6 @@
             this.contract_start_date = this.contract_start_date ? new Date(this.contract_start_date) : null;
             this.contract_end_date =  this.contract_end_date  ?  new Date(this.contract_end_date) : null;
             this.contract_date = this.contract_date ?  new Date(this.contract_date) : null;
-
             $http.get('testData/projectsFinancies.json').success(function (data) {
                 var projectFinStructure = data.findByParam('id', self.id);
                 var rows = projectFinStructure.financies;

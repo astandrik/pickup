@@ -10,3 +10,9 @@ C:\Users\a\Source\Workspaces\CONTRACT-ARM\PickUpFront\bin\PickUpFront.pdb
 C:\Users\a\Source\Workspaces\CONTRACT-ARM\PickUpFront\obj\Debug\PickUpFront.csprojResolveAssemblyReference.cache
 C:\Users\a\Source\Workspaces\CONTRACT-ARM\PickUpFront\obj\Debug\PickUpFront.dll
 C:\Users\a\Source\Workspaces\CONTRACT-ARM\PickUpFront\obj\Debug\PickUpFront.pdb
+C:\123\CONTRACT-ARM\PickUpFront\bin\PickUpFront.dll.config
+C:\123\CONTRACT-ARM\PickUpFront\bin\PickUpFront.dll
+C:\123\CONTRACT-ARM\PickUpFront\bin\PickUpFront.pdb
+C:\123\CONTRACT-ARM\PickUpFront\obj\Debug\PickUpFront.csprojResolveAssemblyReference.cache
+C:\123\CONTRACT-ARM\PickUpFront\obj\Debug\PickUpFront.dll
+C:\123\CONTRACT-ARM\PickUpFront\obj\Debug\PickUpFront.pdb
